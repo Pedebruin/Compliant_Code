@@ -18,6 +18,9 @@ session_files/journal11.wbjn
 session_files/journal12.wbjn
 session_files/journal12_crashed.wbjn
 session_files/journal13.wbjn
+session_files/journal13_crashed.wbjn
+session_files/journal14.wbjn
+session_files/journal15.wbjn
 session_files/journal2.wbjn
 session_files/journal3.wbjn
 session_files/journal4.wbjn
@@ -27,6 +30,7 @@ session_files/journal7.wbjn
 session_files/journal8.wbjn
 session_files/journal9.wbjn
 dp0/
+dpall/
 session_files/
 dp0/Geom/
 dp0/global/
@@ -36,3 +40,6 @@ dp0/global/MECH/
 dp0/global/MECH/SYS/
 dp0/SYS/ENGD/
 dp0/SYS/MECH/
+dpall/global/
+dpall/global/ACT/
+dpall/global/ACT/extensions/
