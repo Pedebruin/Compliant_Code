@@ -1,0 +1,13 @@
+# encoding: utf-8
+# 2019 R3
+SetScriptVersion(Version="19.5.112")
+system1 = GetSystem(Name="RSO")
+CleanSystem(Systems=[system1])
+system1.Delete()
+Save(Overwrite=True)
+Save(Overwrite=True)
+system2 = GetSystem(Name="SYS")
+model1 = system2.GetContainer(ComponentName="Model")
+model1.Edit()
+model1.Edit()
+Save(Overwrite=True)

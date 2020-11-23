@@ -1,0 +1,113 @@
+# encoding: utf-8
+# 2019 R3
+SetScriptVersion(Version="19.5.112")
+system1 = GetSystem(Name="SYS")
+model1 = system1.GetContainer(ComponentName="Model")
+model1.Edit()
+system2 = GetSystem(Name="SYS 1")
+system2.Delete()
+model1.Edit()
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+template1 = GetTemplate(TemplateName="Response Surface")
+system3 = template1.CreateSystem()
+designofExperimentComponent1 = system3.GetComponent(Name="Design of Experiment")
+designofExperimentComponent1.Update(AllDependencies=True)
+designofExperiment1 = system3.GetContainer(ComponentName="Design of Experiment")
+dOEModel1 = designofExperiment1.GetModel()
+inputParameter1 = dOEModel1.GetParameter(Name="P1")
+inputParameter1.LowerBound = 0.3
+inputParameter1.UpperBound = 1
+dOEModel1.PreserveDesignPoints = True
+dOEModel1.RetainDesignPoints = True
+dOEModel1.NumberOfRetries = 3
+designPointsTable1 = dOEModel1.PreviewDesignPoints()
+designofExperimentComponent1.Update(AllDependencies=True)
+template2 = GetTemplate(TemplateName="Direct Optimization")
+system4 = template2.CreateSystem(
+    Position="Right",
+    RelativeTo=system3)
+optimization1 = system4.GetContainer(ComponentName="Optimization")
+optimizationModel1 = optimization1.GetModel()
+outputParameter1 = optimizationModel1.GetParameter(Name="P2")
+optimizationCriterion1 = outputParameter1.CreateOptimizationCriterion()
+optimizationModel1.DeleteOptimizationCriteria(OptimizationCriteria=[optimizationCriterion1])
+inputParameter2 = optimizationModel1.GetParameter(Name="P1")
+optimizationCriterion2 = inputParameter2.CreateOptimizationCriterion()
+optimizationCriterion2.ObjectiveType = "GT_MaximumPossible"
+optimizationCriterion2.ObjectiveType = "GT_NoPreference"
+optimizationModel1.DeleteOptimizationCriteria(OptimizationCriteria=[optimizationCriterion2])
+optimizationCriterion3 = inputParameter2.CreateOptimizationCriterion()
+optimizationCriterion3.ObjectiveType = "GT_MaximumPossible"
+optimizationCriterion3.LowerBound = 0.3
+optimizationCriterion3.UpperBound = 3
+system4.Delete()
+template3 = GetTemplate(TemplateName="Response Surface Optimization")
+system5 = template3.CreateSystem(
+    Position="Right",
+    RelativeTo=system3)
+designofExperiment2 = system5.GetContainer(ComponentName="Design of Experiment")
+dOEModel2 = designofExperiment2.GetModel()
+dOEModel2.NumberOfRetries = 10
+dOEModel2.RetryDelay = "5 [s]"
+dOEModel2.PreserveDesignPoints = True
+dOEModel2.RetainDesignPoints = True
+dOEModel2.NumberOfRetries = 2
+inputParameter3 = dOEModel2.GetParameter(Name="P1")
+inputParameter3.LowerBound = 0.3
+inputParameter3.UpperBound = 3
+inputParameter3.Enabled = False
+inputParameter3.Enabled = True
+designPointsTable2 = dOEModel2.PreviewDesignPoints()
+designPoint1 = Parameters.GetDesignPoint(Name="0")
+designPoint2 = designPoint1.Duplicate()
+designPoint2.SetEntityProperties(Properties=Set(Retained=False, Exported=False, UpdateOrder=0, Note="Created from Design of Experiment 1"))
+parameter1 = Parameters.GetParameter(Name="P1")
+designPoint2.SetParameterExpressions(ParameterExpressions={parameter1: "1.6500000000000001 [mm]"})
+dOEModel2.MethodName = "ANSYS_LHS"
+dOEModel2.MethodName = "ANSYS_USER"
+dOEModel2.MethodName = "ANSYS_OSFD"
+designPointsTable3 = dOEModel2.PreviewDesignPoints()
+designPointsTable3.OptimizeUpdateOrder()
+dOEModel2.MethodName = "ANSYS_CUSTOMOSFD"
+dOEModel2.MethodName = "ANSYS_CCD"
+responseSurfaceComponent1 = system5.GetComponent(Name="Response Surface")
+responseSurfaceComponent1.Update(AllDependencies=True)
+responseSurfaceComponent1.Refresh()
+optimization2 = system5.GetContainer(ComponentName="Optimization")
+optimizationModel2 = optimization2.GetModel()
+optimizationModel2.MethodSelection = "OMS_Manual"
+optimizationModel2.MethodName = "ANSYS_NLPQL"
+optimizationModel2.MethodName = "ANSYS_MISQP"
+optimizationModel2.MethodName = "ANSYS_NLPQL"
+dOEModel2.MethodName = "ANSYS_CUSTOMOSFD"
+customDOEPlusSampling1 = dOEModel2.Method
+customDOEPlusSampling1.TotalNumSamp = 20
+designofExperimentComponent2 = system5.GetComponent(Name="Design of Experiment")
+designofExperimentComponent2.Update(AllDependencies=True)
+inputParameter4 = optimizationModel2.GetParameter(Name="P1")
+optimizationCriterion4 = inputParameter4.CreateOptimizationCriterion()
+optimizationCriterion4.ObjectiveType = "GT_MaximumPossible"
+responseSurfaceComponent1.Update(AllDependencies=True)
+designPointsTable3.DeleteRows(Indices=[2])
+designofExperimentComponent2.Update(AllDependencies=True)
+responseSurfaceComponent1.Update(AllDependencies=True)
+inputParameter3.LowerBound = 0.15
+customDOEPlusSampling1.TotalNumSamp = 25
+designPointsTable4 = dOEModel2.PreviewDesignPoints()
+designofExperimentComponent2.Update(AllDependencies=True)
+inputParameter3.UpperBound = 4
+inputParameter3.LowerBound = 0.2
+designPointsTable5 = dOEModel2.PreviewDesignPoints()
+customDOEPlusSampling1.TotalNumSamp = 30
+customDOEPlusSampling1.TotalNumSamp = 25
+designofExperimentComponent2.Update(AllDependencies=True)
+designofExperimentComponent2.Update(AllDependencies=True)
+designPointsTable5.DeleteRows(Indices=[0])
+designPointsTable5.DeleteRows(Indices=[0])
+designPointsTable5.DeleteRows(Indices=[22])
+designofExperimentComponent2.Update(AllDependencies=True)
+responseSurfaceComponent1.Update(AllDependencies=True)
+Save(Overwrite=True)

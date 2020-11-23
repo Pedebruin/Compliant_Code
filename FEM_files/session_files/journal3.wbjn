@@ -1,0 +1,50 @@
+# encoding: utf-8
+# 2019 R3
+SetScriptVersion(Version="19.5.112")
+system1 = GetSystem(Name="Geometry")
+geometry1 = system1.GetContainer(ComponentName="Geometry")
+geometry1.UpdateCAD()
+system2 = GetSystem(Name="SYS")
+model1 = system2.GetContainer(ComponentName="Model")
+model1.Edit()
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+model1.Exit()
+system2.DisplayText = "Preloadingl"
+template1 = GetTemplate(
+    TemplateName="Linear Buckling",
+    Solver="ANSYS")
+system3 = template1.CreateSystem(
+    Position="Left",
+    RelativeTo=system2)
+system3.Delete()
+system4 = template1.CreateSystem(
+    Position="Below",
+    RelativeTo=system2)
+system4.Delete()
+system5 = template1.CreateSystem(
+    Position="Right",
+    RelativeTo=system2)
+modelComponent1 = system2.GetComponent(Name="Model")
+modelComponent2 = system5.GetComponent(Name="Model")
+modelComponent1.TransferData(TargetComponent=modelComponent2)
+modelComponent2.Refresh()
+system5.Delete()
+engineeringDataComponent1 = system2.GetComponent(Name="Engineering Data")
+geometryComponent1 = system2.GetComponent(Name="Geometry")
+system6 = template1.CreateSystem(
+    ComponentsToShare=[engineeringDataComponent1, geometryComponent1, modelComponent1],
+    Position="Right",
+    RelativeTo=system2)
+modelComponent1.Refresh()
+setupComponent1 = system6.GetComponent(Name="Setup")
+setupComponent1.Refresh()
+setup1 = system6.GetContainer(ComponentName="Setup")
+setup1.Edit()
+solutionComponent1 = system2.GetComponent(Name="Solution")
+solutionComponent1.TransferData(TargetComponent=setupComponent1)
+model1.Exit()
+system6.Delete()
+Save(Overwrite=True)

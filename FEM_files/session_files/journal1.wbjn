@@ -1,0 +1,33 @@
+# encoding: utf-8
+# 2019 R3
+SetScriptVersion(Version="19.5.112")
+DesignModeler.CreateGeometrySystemWithActiveCAD(
+    FilePath=r"C:\Users\pedeb\Desktop\HTE\Compliant\Modelling\V1.SLDPRT",
+    PlugInName="SOLIDWORKS[4456]")
+template1 = GetTemplate(
+    TemplateName="Static Structural",
+    Solver="ANSYS")
+system1 = GetSystem(Name="Geometry")
+system2 = template1.CreateSystem(
+    Position="Right",
+    RelativeTo=system1)
+geometryComponent1 = system2.GetComponent(Name="Geometry")
+geometryComponent2 = system1.GetComponent(Name="Geometry")
+geometryComponent1.ReplaceWithShare(
+    TargetSystem=system2,
+    ComponentToShare=geometryComponent2,
+    SourceSystem=system1)
+modelComponent1 = system2.GetComponent(Name="Model")
+modelComponent1.Update(AllDependencies=True)
+setup1 = system2.GetContainer(ComponentName="Setup")
+setup1.Edit()
+model1 = system2.GetContainer(ComponentName="Model")
+model1.Exit()
+template2 = GetTemplate(TemplateName="Mechanical APDL")
+componentTemplate1 = GetComponentTemplate(Name="ANSYSSetupCellTemplate")
+system3 = template2.CreateSystem(
+    DataTransferFrom=[Set(FromComponent=geometryComponent1, TransferName=None, ToComponentTemplate=componentTemplate1)],
+    RelativeTo=system2)
+system3.Delete()
+model1.Edit()
+Save(Overwrite=True)

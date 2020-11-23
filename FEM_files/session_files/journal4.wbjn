@@ -1,0 +1,67 @@
+# encoding: utf-8
+# 2019 R3
+SetScriptVersion(Version="19.5.112")
+system1 = GetSystem(Name="SYS")
+model1 = system1.GetContainer(ComponentName="Model")
+model1.Edit()
+system1.Copy(KeepConnections=True)
+system2 = GetSystem(Name="SYS 1")
+system2.Delete()
+template1 = GetTemplate(
+    TemplateName="Static Structural",
+    Solver="ANSYS")
+system3 = template1.CreateSystem(
+    Position="Right",
+    RelativeTo=system1)
+system3.Delete()
+engineeringDataComponent1 = system1.GetComponent(Name="Engineering Data")
+geometryComponent1 = system1.GetComponent(Name="Geometry")
+modelComponent1 = system1.GetComponent(Name="Model")
+system4 = template1.CreateSystem(
+    ComponentsToShare=[engineeringDataComponent1, geometryComponent1, modelComponent1],
+    Position="Right",
+    RelativeTo=system1)
+setup1 = system4.GetContainer(ComponentName="Setup")
+setup1.Edit()
+system4.Delete()
+system5 = template1.CreateSystem(
+    ComponentsToShare=[engineeringDataComponent1, geometryComponent1, modelComponent1],
+    Position="Right",
+    RelativeTo=system1)
+engineeringData1 = system1.GetContainer(ComponentName="Engineering Data")
+material1 = engineeringData1.GetMaterial(Name="Polypropylene (PP) 2")
+material1.SetSuppression(Suppressed=True)
+material1.Delete()
+modelComponent1.Update(AllDependencies=True)
+template2 = GetTemplate(
+    TemplateName="Linear Buckling",
+    Solver="ANSYS")
+engineeringDataComponent2 = system5.GetComponent(Name="Engineering Data")
+geometryComponent2 = system5.GetComponent(Name="Geometry")
+modelComponent2 = system5.GetComponent(Name="Model")
+system6 = template2.CreateSystem(
+    ComponentsToShare=[engineeringDataComponent2, geometryComponent2, modelComponent2],
+    Position="Right",
+    RelativeTo=system5)
+material2 = engineeringData1.GetMaterial(Name="Polypropylene (PP)")
+matlProp1 = material2.GetProperty(Name="Tensile Yield Strength")
+matlProp1.SetVariableProperty(
+    VariableName="Tensile Yield Strength",
+    Property="Unit",
+    Value="MPa")
+matlProp1.SetData(
+    Variables=["Tensile Yield Strength"],
+    Values=[["26.2 [MPa]"]])
+matlProp2 = material2.GetProperty(Name="Tensile Ultimate Strength")
+matlProp2.SetVariableProperty(
+    VariableName="Tensile Ultimate Strength",
+    Property="Unit",
+    Value="MPa")
+matlProp2.SetData(
+    Variables=["Tensile Ultimate Strength"],
+    Values=[["29.9 [MPa]"]])
+Save(Overwrite=True)
+model1.Exit()
+Save(Overwrite=True)
+modelComponent1.UpdateUpstreamComponents()
+Save(Overwrite=True)
