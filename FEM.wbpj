@@ -2,10 +2,10 @@
 <Storage>
   <Project Version="9.1">
     <base-designpoint-name valType="String">0</base-designpoint-name>
-    <timestamp-max valType="Int64">74222</timestamp-max>
+    <timestamp-max valType="Int64">74594</timestamp-max>
     <framework-build-version valType="String">19.5.112.0</framework-build-version>
     <external-version-string valType="String">2019 R3</external-version-string>
-    <last-saved-utc valType="String">11/23/2020 17:02:04</last-saved-utc>
+    <last-saved-utc valType="String">11/23/2020 17:17:56</last-saved-utc>
     <managed-categories valType="String">[report, misc, progress]</managed-categories>
     <logHistory valType="StringArray">
       <ArrayEntry Index="0">Pim Ebbel de Bruin@PIM-LAPTOP:C:\Users\pedeb\AppData\Local\Temp\WorkbenchLogs\CoreEvents10716.log</ArrayEntry>
@@ -18,6 +18,7 @@
       <ArrayEntry Index="7">Pim Ebbel de Bruin@PIM-LAPTOP:C:\Users\pedeb\AppData\Local\Temp\WorkbenchLogs\CoreEvents9420.log</ArrayEntry>
       <ArrayEntry Index="8">Pim Ebbel de Bruin@PIM-LAPTOP:C:\Users\pedeb\AppData\Local\Temp\WorkbenchLogs\CoreEvents16680.log</ArrayEntry>
       <ArrayEntry Index="9">Pim Ebbel de Bruin@PIM-LAPTOP:C:\Users\pedeb\AppData\Local\Temp\WorkbenchLogs\CoreEvents5432.log</ArrayEntry>
+      <ArrayEntry Index="10">Pim Ebbel de Bruin@PIM-LAPTOP:C:\Users\pedeb\AppData\Local\Temp\WorkbenchLogs\CoreEvents13440.log</ArrayEntry>
     </logHistory>
     <expression-scope-container valType="String">Parameters</expression-scope-container>
     <project-type valType="String">WB2</project-type>
@@ -53,7 +54,6 @@
 "5bf3b3a1-7616-4148-9be9-dd41896d54ce": "/Schematic/ComponentTemplate:SimulationSetupCellTemplate_StructuralStaticANSYS",
 "da28fe39-d10f-44be-a63b-28116ef94d99": "/Schematic/ComponentTemplate:SimulationSolutionCellTemplate_StructuralStaticANSYS",
 "a52faf5e-0eb3-4dd4-b39b-ff909cf046de": "/Schematic/ComponentTemplate:SimulationResultsCellTemplate_StructuralStaticANSYS",
-"ac5b2643-6985-4658-a453-074b4ebf2b01": "/FileContainer/FileReference:F8",
 "1bd40e88-6aaf-44ae-90f5-805cdca13a8c": "/FileContainer/FileReference:F9",
 "41ce4299-01bb-4a2b-a4b2-a56942242f62": "/Parameters/Parameter:P2",
 "8b204f36-50e9-4170-b5ef-ee436135e432": "/FileTypesContainer/FileType:ParametersFileType",
@@ -63,7 +63,8 @@
 "cbd2c823-d4bf-4945-b03d-b90c659a4b22": "/Schematic/ComponentTemplate:DXDOECellTemplate",
 "429c7559-ee0e-4953-a678-78b3bc4988b5": "/Schematic/ComponentTemplate:DXResponseSurfaceCellTemplate",
 "e8c0ac19-1b36-4417-928b-696cec6f80fd": "/Schematic/ComponentTemplate:DXOptimizationCellTemplate_GDO",
-"5c2bd25e-288c-4d83-bee3-ddf245d58389": "/FileTypesContainer/FileType:default"
+"5c2bd25e-288c-4d83-bee3-ddf245d58389": "/FileTypesContainer/FileType:default",
+"b18fd967-0461-4823-a0be-634e2071ae7e": "/FileContainer/FileReference:F10"
 }</ReferenceList>
       </ProjectReferenceList>
       <DesignPointReferenceListCollection>
@@ -290,13 +291,13 @@
       <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">0</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 74085, "Input": 1390, "Output": 1390}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 74518, "Input": 1390, "Output": 1390}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <contains-significant-data valType="Boolean">false</contains-significant-data>
-      <Object Name="/FileContainer/FileReference:F8" Version="1.0">
+      <Object Name="/FileContainer/FileReference:F10" Version="1.0">
         <class-type valType="String">FileReference</class-type>
-        <object-name valType="String">F8</object-name>
-        <member-data valType="String">{"DisplayText": "V1.SLDPRT", "FileType": $$d58ae38e-31f2-4cfd-aaf0-992b40156df1, "DependentFiles": [], "ContainerAssociations": ["Geometry"], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\user_files\V1.SLDPRT", "ReferenceCount": 1}</member-data>
+        <object-name valType="String">F10</object-name>
+        <member-data valType="String">{"DisplayText": "v1.SLDPRT", "FileType": $$d58ae38e-31f2-4cfd-aaf0-992b40156df1, "DependentFiles": [], "ContainerAssociations": ["Geometry"], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"C:\Users\pedeb\Desktop\HTE\Compliant\Compliant_Code\v1.SLDPRT", "ReferenceCount": 1}</member-data>
       </Object>
       <Object Name="/FileContainer/FileReference:F2" Version="1.0">
         <class-type valType="String">FileReference</class-type>
@@ -4433,13 +4434,13 @@ Licensing path:
       <maxUpdateOrder valType="Double">18</maxUpdateOrder>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">0</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 74222, "Input": 73543, "Output": 1394}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 74594, "Input": 74540, "Output": 1394}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <contains-significant-data valType="Boolean">true</contains-significant-data>
       <Object Name="/Parameters/DesignPoint:0" Version="1.0">
         <class-type valType="String">DesignPoint</class-type>
         <object-name valType="String">0</object-name>
-        <member-data valType="String">{"DisplayText": "DP 0", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": [], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Model in SYS", "DidCompleteUpdate": "True"}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "68.558530489171773 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "UpToDate"}, "Note": None, "IsUpToDate": True, "Exported": True, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": True, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 1}</member-data>
+        <member-data valType="String">{"DisplayText": "DP 0", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": [], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Model in SYS", "DidCompleteUpdate": "True"}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "0 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": None, "IsUpToDate": False, "Exported": True, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": True, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 1}</member-data>
         <properties-setByUserFlag-data valType="String">["IsDataModelValid", "Retained", "Exported", "UpdateOrder", "DisplayText"]</properties-setByUserFlag-data>
       </Object>
       <Object Name="/Parameters/DesignPoint:4" Version="1.0">
@@ -4714,7 +4715,7 @@ Licensing path:
       <Object Name="/Parameters/Parameter:P2" Version="1.0">
         <class-type valType="String">Parameter</class-type>
         <object-name valType="String">P2</object-name>
-        <member-data valType="String">{"DisplayText": "Equivalent Stress Maximum", "PersistedNamedValueEntityReference": None, "Expression": None, "Usage": "DirectOutput", "IsParameter": True, "Scope": None, "SystemData": {}, "SerializedNamedExpression": None, "Description": None, "ErrorMessage": None, "HasRemovedLinksFromMigration": False, "Value": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "68.558530489171773 [MPa]"}, "ValueSpec": {"SpecType": "Ansys.Core.DataSpecs.QuantitySpec, Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Default": "0 [MPa]", "Exposure": "AnyUser", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Usage": "Output", "IsDesignPointInvariant": False, "IsParameterizable": True, "ReuseJournalVariables": False, "UndefinedValue": "1.79769313486231E+308", "QuantityName": "Stress"}}</member-data>
+        <member-data valType="String">{"DisplayText": "Equivalent Stress Maximum", "PersistedNamedValueEntityReference": None, "Expression": None, "Usage": "DirectOutput", "IsParameter": True, "Scope": None, "SystemData": {}, "SerializedNamedExpression": None, "Description": None, "ErrorMessage": None, "HasRemovedLinksFromMigration": False, "Value": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "0 [MPa]"}, "ValueSpec": {"SpecType": "Ansys.Core.DataSpecs.QuantitySpec, Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Default": "0 [MPa]", "Exposure": "AnyUser", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Usage": "Output", "IsDesignPointInvariant": False, "IsParameterizable": True, "ReuseJournalVariables": False, "UndefinedValue": "1.79769313486231E+308", "QuantityName": "Stress"}}</member-data>
       </Object>
       <ParameterToPropertyMap>
         <Parameter Name="/Parameters/Parameter:P2">
@@ -4732,7 +4733,7 @@ Licensing path:
       <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">0</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 74079, "Input": 74088, "Output": 1397}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 74532, "Input": 74523, "Output": 1397}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <contains-significant-data valType="Boolean">true</contains-significant-data>
       <Object Name="/Schematic/System:Geometry" Version="1.0">
@@ -4838,7 +4839,7 @@ Licensing path:
       <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">0</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 74056, "Input": 1680, "Output": 1680}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 74513, "Input": 1680, "Output": 1680}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <contains-significant-data valType="Boolean">false</contains-significant-data>
     </Container>

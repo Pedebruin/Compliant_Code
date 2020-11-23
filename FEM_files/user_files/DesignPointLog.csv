@@ -1,0 +1,16 @@
+﻿# 
+# This file contains the parameter values of the Design Points successfully updated by ANSYS Workbench.
+# Project name: FEM
+# Creation date: 11/23/2020 18:14:12
+# 
+# 11/23/2020 18:14:12
+# The parameters defined in the project are:
+# ,P2 - Equivalent Stress Maximum [MPa]
+# 
+# The following header line defines the name of the columns by reference to the parameters.
+Name,P2
+DP 0,68.558530489171773
+# 
+# A non parametric change occurred and invalidated design point results.
+# 11/23/2020 18:14:51
+# 

@@ -1,0 +1,12 @@
+# encoding: utf-8
+# 2019 R3
+SetScriptVersion(Version="19.5.112")
+system1 = GetSystem(Name="Geometry")
+geometry1 = system1.GetContainer(ComponentName="Geometry")
+geometry1.SetFile(FilePath="C:/Users/pedeb/Desktop/HTE/Compliant/Compliant_Code/v1.SLDPRT")
+system2 = GetSystem(Name="SYS")
+modelComponent1 = system2.GetComponent(Name="Model")
+modelComponent1.Refresh()
+model1 = system2.GetContainer(ComponentName="Model")
+model1.Edit()
+Save(Overwrite=True)
