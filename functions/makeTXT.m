@@ -6,7 +6,7 @@ for i = 1:length(Objects)
     fields = fieldnames(Objects{i});
     for j = 2:numel(fields)
         field = fields{j};
-        if ismember(field,['L','h','w','v','d','wmax','delta'])                % which fields do you want
+        if ismember(field,['L','h','w','v','d','t','s','wmax','delta'])                % which fields do you want
             value = num2str(getfield(Objects{i},field));
 
             % set . or _
@@ -35,7 +35,7 @@ for i = 1:length(Objects)
     end
 end
 
-fileID = fopen('equations.txt','wt');
+fileID = fopen('./Fem_files/user_files/equations.txt','wt');
 formatSpec = '%s\n';
 fprintf(fileID,formatSpec,parameters);
 

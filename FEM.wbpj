@@ -2,10 +2,10 @@
 <Storage>
   <Project Version="9.1">
     <base-designpoint-name valType="String">0</base-designpoint-name>
-    <timestamp-max valType="Int64">77005</timestamp-max>
+    <timestamp-max valType="Int64">77739</timestamp-max>
     <framework-build-version valType="String">19.5.112.0</framework-build-version>
     <external-version-string valType="String">2019 R3</external-version-string>
-    <last-saved-utc valType="String">11/23/2020 20:23:17</last-saved-utc>
+    <last-saved-utc valType="String">11/23/2020 21:41:25</last-saved-utc>
     <managed-categories valType="String">[report, misc, progress]</managed-categories>
     <logHistory valType="StringArray">
       <ArrayEntry Index="0">Pim Ebbel de Bruin@PIM-LAPTOP:C:\Users\pedeb\AppData\Local\Temp\WorkbenchLogs\CoreEvents10716.log</ArrayEntry>
@@ -23,6 +23,7 @@
       <ArrayEntry Index="12">Pim Ebbel de Bruin@PIM-LAPTOP:C:\Users\pedeb\AppData\Local\Temp\WorkbenchLogs\CoreEvents7008.log</ArrayEntry>
       <ArrayEntry Index="13">Daniel@DANIEL-PC:C:\Users\Daniel\AppData\Local\Temp\WorkbenchLogs\CoreEvents5752.log</ArrayEntry>
       <ArrayEntry Index="14">Daniel@DANIEL-PC:C:\Users\Daniel\AppData\Local\Temp\WorkbenchLogs\CoreEvents13320.log</ArrayEntry>
+      <ArrayEntry Index="15">Pim Ebbel de Bruin@PIM-LAPTOP:C:\Users\pedeb\AppData\Local\Temp\WorkbenchLogs\CoreEvents14252.log</ArrayEntry>
     </logHistory>
     <expression-scope-container valType="String">Parameters</expression-scope-container>
     <project-type valType="String">WB2</project-type>
@@ -58,7 +59,6 @@
 "5bf3b3a1-7616-4148-9be9-dd41896d54ce": "/Schematic/ComponentTemplate:SimulationSetupCellTemplate_StructuralStaticANSYS",
 "da28fe39-d10f-44be-a63b-28116ef94d99": "/Schematic/ComponentTemplate:SimulationSolutionCellTemplate_StructuralStaticANSYS",
 "a52faf5e-0eb3-4dd4-b39b-ff909cf046de": "/Schematic/ComponentTemplate:SimulationResultsCellTemplate_StructuralStaticANSYS",
-"41ce4299-01bb-4a2b-a4b2-a56942242f62": "/Parameters/Parameter:P2",
 "8b204f36-50e9-4170-b5ef-ee436135e432": "/FileTypesContainer/FileType:ParametersFileType",
 "5cb28302-0c04-4890-b5cd-25853fa35c28": "/FileTypesContainer/FileType:DesignXplorerFileType",
 "606e39f7-86cd-4651-8872-82d698ca3d34": "/Schematic/Template:Response Surface",
@@ -270,7 +270,6 @@
 "4f831d1a-063b-4db6-8c71-6dad26e24e15": "/Engineering Data/MaterialVariable:Bulk Modulus 3",
 "867c5919-3d03-46b3-8a58-11c780f021ed": "/Engineering Data/MaterialVariable:Shear Modulus 3",
 "ba50411d-c3df-4347-9e5c-3b495977a292": "/Engineering Data/MaterialVariable:Interpolation Options 16",
-"d4cb8909-7dfd-4097-8f23-4d773a9b110f": "/Results/ParameterAdapter1:47bb142d-a305-4a47-be5a-374b773bfe7c",
 "4080de8d-6906-4c5b-ad08-270544ae8740": "/Engineering Data/Material:Structural Steel 1",
 "38a06240-6e1f-49bc-b200-ea25ac3e039c": "/Engineering Data/MaterialProperty:Appearance 4",
 "4f0b47b9-1e57-4227-9f6e-4369733223d3": "/Engineering Data/MaterialPropertyData:Color 4",
@@ -4641,301 +4640,24 @@ Licensing path:
       <container-type valType="String">Ansys.ParameterManager.ParameterManagerAddin:parameters</container-type>
       <static-id valType="String">Parameters</static-id>
       <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
-      <maxUpdateOrder valType="Double">18</maxUpdateOrder>
+      <maxUpdateOrder valType="Double">1</maxUpdateOrder>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">0</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 77005, "Input": 76105, "Output": 1394}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 77738, "Input": 77739, "Output": 1394}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <contains-significant-data valType="Boolean">true</contains-significant-data>
       <Object Name="/Parameters/DesignPoint:0" Version="1.0">
         <class-type valType="String">DesignPoint</class-type>
         <object-name valType="String">0</object-name>
-        <member-data valType="String">{"DisplayText": "DP 0", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": [], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Model in SYS", "DidCompleteUpdate": "True"}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "0 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": None, "IsUpToDate": False, "Exported": True, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": True, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 1}</member-data>
+        <member-data valType="String">{"DisplayText": "DP 0", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": [], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Model in SYS", "DidCompleteUpdate": "True"}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {}, "ParameterStatus": {}, "Note": None, "IsUpToDate": True, "Exported": True, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": True, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 1}</member-data>
         <properties-setByUserFlag-data valType="String">["IsDataModelValid", "Retained", "Exported", "UpdateOrder", "DisplayText"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:4" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">4</object-name>
-        <member-data valType="String">{"DisplayText": "DP 4", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "39.70881100633116 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 4}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:3" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">3</object-name>
-        <member-data valType="String">{"DisplayText": "DP 3", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "41.239248337762866 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 3}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:2" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">2</object-name>
-        <member-data valType="String">{"DisplayText": "DP 2", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "40.66371955782801 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 2}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:1" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">1</object-name>
-        <member-data valType="String">{"DisplayText": "DP 1", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {"$$e026d27d-cb06-4ef3-b422-9d845a247e43": "Update of the Solution component in Preloadingl for Design Point 1 failed: Error updating cell Solution in system Preloadingl for design point 1."}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Model in SYS, Setup in SYS, Solution in SYS"}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "0 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 1}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:5" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">5</object-name>
-        <member-data valType="String">{"DisplayText": "DP 5", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Model in SYS, Setup in SYS, Solution in SYS, Results in SYS", "DidCompleteUpdate": "True"}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "136.85272359254856 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Created from Design of Experiment 1", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 0}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "DisplayText", "IsDataModelValid"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:6" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">6</object-name>
-        <member-data valType="String">{"DisplayText": "DP 6", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "41.321731087460257 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 1}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid", "DisplayText"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:7" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">7</object-name>
-        <member-data valType="String">{"DisplayText": "DP 7", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "40.102764167781906 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 3}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "DisplayText", "IsDataModelValid"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:8" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">8</object-name>
-        <member-data valType="String">{"DisplayText": "DP 8", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {"$$e026d27d-cb06-4ef3-b422-9d845a247e43": "Update of the Solution component in Preloadingl for Design Point 8 failed: Error updating cell Solution in system Preloadingl for design point 8."}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "0 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "NeverSolved"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": False, "UpdateOrder": 4}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "DisplayText", "IsDataModelValid"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:9" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">9</object-name>
-        <member-data valType="String">{"DisplayText": "DP 9", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {"$$e026d27d-cb06-4ef3-b422-9d845a247e43": "Update of the Solution component in Preloadingl for Design Point 9 failed: Error updating cell Solution in system Preloadingl for design point 9."}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "0 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 1}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid", "DisplayText"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:10" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">10</object-name>
-        <member-data valType="String">{"DisplayText": "DP 10", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {"$$e026d27d-cb06-4ef3-b422-9d845a247e43": "Update of the Solution component in Preloadingl for Design Point 10 failed: Error updating cell Solution in system Preloadingl for design point 10."}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "0 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 2}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid", "DisplayText"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:11" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">11</object-name>
-        <member-data valType="String">{"DisplayText": "DP 11", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "40.215580405995958 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 3}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid", "DisplayText"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:12" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">12</object-name>
-        <member-data valType="String">{"DisplayText": "DP 12", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "39.537923552801374 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 4}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid", "DisplayText"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:13" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">13</object-name>
-        <member-data valType="String">{"DisplayText": "DP 13", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "40.567249243497415 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 6}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid", "DisplayText"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:14" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">14</object-name>
-        <member-data valType="String">{"DisplayText": "DP 14", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "40.979244395830705 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 7}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid", "DisplayText"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:15" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">15</object-name>
-        <member-data valType="String">{"DisplayText": "DP 15", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "38.232756602173438 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 8}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid", "DisplayText"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:16" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">16</object-name>
-        <member-data valType="String">{"DisplayText": "DP 16", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "39.547679416051892 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 9}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid", "DisplayText"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:17" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">17</object-name>
-        <member-data valType="String">{"DisplayText": "DP 17", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "39.25232450296334 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 10}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid", "DisplayText"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:18" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">18</object-name>
-        <member-data valType="String">{"DisplayText": "DP 18", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "38.679979547197135 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 12}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid", "DisplayText"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:19" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">19</object-name>
-        <member-data valType="String">{"DisplayText": "DP 19", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "38.602087346963607 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 13}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid", "DisplayText"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:20" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">20</object-name>
-        <member-data valType="String">{"DisplayText": "DP 20", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "39.982375133214788 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 14}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid", "DisplayText"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:21" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">21</object-name>
-        <member-data valType="String">{"DisplayText": "DP 21", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "39.898594401104205 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 16}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid", "DisplayText"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:22" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">22</object-name>
-        <member-data valType="String">{"DisplayText": "DP 22", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "40.011892454464643 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 17}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid", "DisplayText"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:23" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">23</object-name>
-        <member-data valType="String">{"DisplayText": "DP 23", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "39.993049813769858 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 18}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid", "DisplayText"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:24" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">24</object-name>
-        <member-data valType="String">{"DisplayText": "DP 24", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "39.906334524892252 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 1}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid", "DisplayText"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:25" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">25</object-name>
-        <member-data valType="String">{"DisplayText": "DP 25", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {"$$e026d27d-cb06-4ef3-b422-9d845a247e43": "Update of the Solution component in Preloadingl for Design Point 25 failed: Error updating cell Solution in system Preloadingl for design point 25."}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "0 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "NeverSolved"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": False, "UpdateOrder": 1}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:26" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">26</object-name>
-        <member-data valType="String">{"DisplayText": "DP 26", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {"$$e026d27d-cb06-4ef3-b422-9d845a247e43": "Update of the Solution component in Preloadingl for Design Point 26 failed: Error updating cell Solution in system Preloadingl for design point 26."}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "0 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 2}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid", "DisplayText"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:27" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">27</object-name>
-        <member-data valType="String">{"DisplayText": "DP 27", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "40.63452799478619 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 3}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid", "DisplayText"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:28" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">28</object-name>
-        <member-data valType="String">{"DisplayText": "DP 28", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "39.511091096361284 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 4}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "DisplayText", "IsDataModelValid"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:29" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">29</object-name>
-        <member-data valType="String">{"DisplayText": "DP 29", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "40.198780442189147 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 5}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "DisplayText", "IsDataModelValid"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:30" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">30</object-name>
-        <member-data valType="String">{"DisplayText": "DP 30", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {"$$e026d27d-cb06-4ef3-b422-9d845a247e43": "Update of the Solution component in Preloadingl for Design Point 30 failed: Error updating cell Solution in system Preloadingl for design point 30."}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Solution in SYS", "DidCompleteUpdate": "True"}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "0 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "NeverSolved"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": False, "UpdateOrder": 4}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid", "DisplayText"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:31" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">31</object-name>
-        <member-data valType="String">{"DisplayText": "DP 31", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "0 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "NeverSolved"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": False, "UpdateOrder": 1}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid", "DisplayText"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:32" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">32</object-name>
-        <member-data valType="String">{"DisplayText": "DP 32", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {"$$e026d27d-cb06-4ef3-b422-9d845a247e43": "Update of the Solution component in Preloadingl for Design Point 32 failed: Error updating cell Solution in system Preloadingl for design point 32."}, "LastUpdateInformation": {}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "0 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "NeverSolved"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": False, "UpdateOrder": 2}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid", "DisplayText"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:33" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">33</object-name>
-        <member-data valType="String">{"DisplayText": "DP 33", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Setup in SYS, Solution in SYS, Results in SYS", "DidCompleteUpdate": "True"}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "151.21086471957483 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 1}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:34" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">34</object-name>
-        <member-data valType="String">{"DisplayText": "DP 34", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Setup in SYS, Solution in SYS, Results in SYS", "DidCompleteUpdate": "True"}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "145.13175388283744 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 2}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:35" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">35</object-name>
-        <member-data valType="String">{"DisplayText": "DP 35", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Model in SYS, Setup in SYS, Solution in SYS, Results in SYS", "DidCompleteUpdate": "True"}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "142.77066682687814 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 3}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:36" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">36</object-name>
-        <member-data valType="String">{"DisplayText": "DP 36", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Model in SYS, Setup in SYS, Solution in SYS, Results in SYS", "DidCompleteUpdate": "True"}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "145.87823665512644 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 4}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:37" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">37</object-name>
-        <member-data valType="String">{"DisplayText": "DP 37", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Model in SYS, Setup in SYS, Solution in SYS, Results in SYS", "DidCompleteUpdate": "True"}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "137.51097541684763 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 5}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:38" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">38</object-name>
-        <member-data valType="String">{"DisplayText": "DP 38", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Model in SYS, Setup in SYS, Solution in SYS, Results in SYS", "DidCompleteUpdate": "True"}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "137.5351698543941 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 6}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:39" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">39</object-name>
-        <member-data valType="String">{"DisplayText": "DP 39", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Model in SYS, Setup in SYS, Solution in SYS, Results in SYS", "DidCompleteUpdate": "True"}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "137.23132677089069 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 7}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:40" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">40</object-name>
-        <member-data valType="String">{"DisplayText": "DP 40", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {"$$e026d27d-cb06-4ef3-b422-9d845a247e43": "Update of the Solution component in Preloadingl for Design Point 40 failed: Error updating cell Solution in system Preloadingl for design point 40."}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Solution in SYS", "DidCompleteUpdate": "True"}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "0 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "NeverSolved"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": False, "UpdateOrder": 8}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid", "DisplayText"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:41" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">41</object-name>
-        <member-data valType="String">{"DisplayText": "DP 41", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {"$$e026d27d-cb06-4ef3-b422-9d845a247e43": "Update of the Solution component in Preloadingl for Design Point 41 failed: Error updating cell Solution in system Preloadingl for design point 41."}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Solution in SYS", "DidCompleteUpdate": "True"}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "0 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "NeverSolved"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": False, "UpdateOrder": 9}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid", "DisplayText"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:42" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">42</object-name>
-        <member-data valType="String">{"DisplayText": "DP 42", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Setup in SYS, Solution in SYS, Results in SYS", "DidCompleteUpdate": "True"}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "137.19440240965838 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 1}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:43" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">43</object-name>
-        <member-data valType="String">{"DisplayText": "DP 43", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Model in SYS, Setup in SYS, Solution in SYS, Results in SYS", "DidCompleteUpdate": "True"}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "137.09885239100635 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 2}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid"]</properties-setByUserFlag-data>
-      </Object>
-      <Object Name="/Parameters/DesignPoint:44" Version="1.0">
-        <class-type valType="String">DesignPoint</class-type>
-        <object-name valType="String">44</object-name>
-        <member-data valType="String">{"DisplayText": "DP 44", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes", "Setup 2"], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Model in SYS, Setup in SYS, Solution in SYS, Results in SYS", "DidCompleteUpdate": "True"}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "137.67130221147733 [MPa]"}}, "ParameterStatus": {"$$41ce4299-01bb-4a2b-a4b2-a56942242f62": "OutOfDate"}, "Note": "Generated from Design of Experiments", "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 3}</member-data>
-        <properties-setByUserFlag-data valType="String">["Retained", "Exported", "UpdateOrder", "Note", "IsDataModelValid"]</properties-setByUserFlag-data>
       </Object>
       <Object Name="/Parameters/DesignPointReportSetting:Design Points Report Setting" Version="1.0">
         <class-type valType="String">DesignPointReportSetting</class-type>
         <object-name valType="String">Design Points Report Setting</object-name>
         <member-data valType="String">{"DisplayText": "Design Points Report Setting", "DesignPointReportImage": "None"}</member-data>
       </Object>
-      <Object Name="/Parameters/Parameter:P2" Version="1.0">
-        <class-type valType="String">Parameter</class-type>
-        <object-name valType="String">P2</object-name>
-        <member-data valType="String">{"DisplayText": "Equivalent Stress Maximum", "PersistedNamedValueEntityReference": None, "Expression": None, "Usage": "DirectOutput", "IsParameter": True, "Scope": None, "SystemData": {}, "SerializedNamedExpression": None, "Description": None, "ErrorMessage": None, "HasRemovedLinksFromMigration": False, "Value": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "0 [MPa]"}, "ValueSpec": {"SpecType": "Ansys.Core.DataSpecs.QuantitySpec, Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Default": "0 [MPa]", "Exposure": "AnyUser", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Usage": "Output", "IsDesignPointInvariant": False, "IsParameterizable": True, "ReuseJournalVariables": False, "UndefinedValue": "1.79769313486231E+308", "QuantityName": "Stress"}}</member-data>
-      </Object>
-      <ParameterToPropertyMap>
-        <Parameter Name="/Parameters/Parameter:P2">
-          <ParameterReference valType="String">41ce4299-01bb-4a2b-a4b2-a56942242f62</ParameterReference>
-          <LinkedEntityProperty>
-            <EntityReference valType="String">d4cb8909-7dfd-4097-8f23-4d773a9b110f</EntityReference>
-            <Property valType="String">Value</Property>
-          </LinkedEntityProperty>
-        </Parameter>
-      </ParameterToPropertyMap>
+      <ParameterToPropertyMap />
     </Container>
     <Container Name="Schematic" Version="1.0">
       <container-type valType="String">Ansys.ProjectSchematic.ProjectSchematicAddin:Default</container-type>
@@ -4943,7 +4665,7 @@ Licensing path:
       <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">0</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 76910, "Input": 75800, "Output": 1397}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 77718, "Input": 75800, "Output": 1397}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <contains-significant-data valType="Boolean">true</contains-significant-data>
       <Object Name="/Schematic/System:Geometry" Version="1.0">
@@ -5049,7 +4771,7 @@ Licensing path:
       <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">0</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 76883, "Input": 1680, "Output": 1680}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 77489, "Input": 1680, "Output": 1680}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <contains-significant-data valType="Boolean">false</contains-significant-data>
     </Container>
@@ -5084,7 +4806,7 @@ Licensing path:
       <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">0</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 2899, "Input": 72771, "Output": 1684}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 2899, "Input": 77660, "Output": 1684}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <contains-significant-data valType="Boolean">true</contains-significant-data>
       <Object Name="/DpdbContainer/DpdbSettings:Dpdb Settings Entity" Version="1.0">

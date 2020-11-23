@@ -7,12 +7,11 @@ addpath('./functions');                                     % add function folde
 
 %% settings
 % Which plots do you want?
-simulation = true;              % The simulation plot
-equilibria = false;             % The equilibria plots
+simulation = false;                 % The simulation plot
+equilibria = false;                 % The equilibria plots
 
-% make file??
-file = false;
-
+% make file the equations.txt file??
+file = true;
 
 %% Parameters
 % Material
@@ -24,9 +23,9 @@ g = 3e-3;   % m
 % Joints
     % a
     a.name = 'a';
-    a.E = Epmma;         % E modulus
-    a.h = 1e-3;        % height [m]
-    a.d = g;             % depth [m]
+    a.E = Epmma;            % E modulus
+    a.h = 1e-3;             % height [m]
+    a.d = g;                % depth [m]
     a.L = 7.5e-3;          % length [m]
     
     % b
@@ -44,7 +43,7 @@ g = 3e-3;   % m
     c.L = 7.5e-3;
     
     % d
-    e.name = 'd';
+    d.name = 'd';
     d.E = Epmma;
     d.h = 2e-3;
     d.d = g;
@@ -53,7 +52,7 @@ g = 3e-3;   % m
 % Links
     % A
     A.name = 'A';
-    A.L = 6e-2; % m 
+    A.L = 7e-2; % m 
     A.h = 0.75e-2;  
     A.d = g;
     A.zeta = pi/9;
@@ -72,7 +71,7 @@ g = 3e-3;   % m
    
     % D
     D.name = 'D';
-    D.L = 6e-2; % m
+    D.L = 5e-2; % m
     D.h = 0.75e-2;
     D.s = D.h;
     D.t = D.h/3;
@@ -196,7 +195,7 @@ for theta = linspace(A.theta_min, A.theta_max, N)
     else
         range = abs(A.theta_min)+abs(A.theta_max);
         progress = (theta+abs(A.theta_min))/range;
-        waitbar(progress,f,sprintf('simulating: theta = %4.4f [rad]',theta));
+        waitbar(progress,f,sprintf('Simulating: theta = %4.4f [rad]',theta));
     end
     
     
