@@ -1,17 +1,20 @@
 clear all
 close all
 set(groot, 'defaultTextInterpreter','latex');
-clear V_v theta_v F_v                                    % Clear consistent variables!
+clear showme                                                % Clear consistent variables!
 addpath('./functions');                                     % add function folder to search path
 
 
 %% settings
 % Which plots do you want?
-simulation = false;                 % The simulation plot
-equilibria = false;                 % The equilibria plots
+simulation = true;                 % The simulation plot
+equilibria = true;                 % The equilibria plots
 
 % make file the equations.txt file??
 file = true;
+
+% Debug mode
+debug = true;
 
 % Simulation
 A.theta_max = pi/12;
@@ -28,73 +31,72 @@ g = 3e-3;   % m
 % Joints
     % a
     a.name = 'a';
-    a.E = Epmma;            % E modulus
-    a.h = 2e-3;             % height [m]
+    a.E = Essteel;            % E modulus
+    a.h = 0.1e-3;             % height [m]
     a.d = g;                % depth [m]
-    a.L = 5e-3;          % length [m]
+    a.L = 3e-3;          % length [m]
     
     % b
     b.name = 'b';
-    b.E = Epmma;
-    b.h = 2e-3;
+    b.E = Essteel;
+    b.h = 0.1e-3;
     b.d = g;
-    b.L = 5e-3;
+    b.L = 3e-3;
     
     % c
     c.name = 'c';
-    c.E = Epmma;
-    c.h = 2e-3;
+    c.E = Essteel;
+    c.h = 0.1e-3;
     c.d = g;
-    c.L = 5e-3;
+    c.L = 3e-3;
     
     % d
     d.name = 'd';
-    d.E = Epmma;
-    d.h = 2e-3;
+    d.E = Essteel;
+    d.h = 0.1e-3;
     d.d = g;
-    d.L = 5e-3;
+    d.L = 3e-3;
     
 % Links
     % A
     A.name = 'A';
     A.L = 50e-3; % m 
-    A.h = 5e-3;  
+    A.h = 3e-3;  
     A.d = g;
     A.zeta = pi/9;
     A.delta = pi/4;     % Angle string finger
     A.w = 2e-2;         % Length switch
     A.v = A.w*6/4;      % Length string finger
-    A.s = A.h/1.5;
-    A.t = A.h/3;
+    A.s = A.h;
+    A.t = A.h;
     
     % B
     B.name = 'B';
-    B.L = 30e-3; % m
-    B.h = 5e-3;
-    B.s = B.h/1.5;
-    B.t = B.h/3;
+    B.L = 20e-3; % m
+    B.h = 3e-3;
+    B.s = B.h;
+    B.t = B.h;
    
     % D
     D.name = 'D';
     D.L = 20e-3; % m
-    D.h = 5e-3;
-    D.s = D.h/1.5;
-    D.t = D.h/3;
+    D.h = 3e-3;
+    D.s = D.h;
+    D.t = D.h;
    
 % Beam
     C.name = 'C';
-    C.E = Epmma;
-    C.h = 1e-3;
+    C.E = Essteel;
+    C.h = 0.4e-3;
     C.d = g;
-    C.L = 20e-3;
-    C.wmax = 2e-3;        % maximum deflection
+    C.L = 16e-3;
+    C.wmax = 3e-3;        % maximum deflection
     C.alpha = 1/4;
     
 % Support
     S.name = 'S';
     S.h = 10e-3;
     S.L = -a.L-b.L-c.L-d.L+A.L+B.L+D.L-2*D.t-2*B.t-2*A.t-C.h/2-S.h-C.wmax;  % S.L at theta=0 -C.wmax
-
     %% Stiffnesses
 a.I = a.d*a.h^3/12;
 b.I = b.d*b.h^3/12;
@@ -118,8 +120,13 @@ if file == true
 end
 
 % If you would like to test:
-%Plots = showme(0,0,0,0,Objects,'test');
-
+if debug == true
+    Plots = showme(0,0,0,0,Objects,1,'test');
+    disp('Press any continue to continue');
+    pause;
+    disp('Continuing...')
+    clear showme
+end
 
 % Get kinematic model equations as a function of theta and chi
 [theta,chi,phi,cAng,bAng,aAng,w,~,~,~,~,~,~] = kinModel(Objects);
@@ -137,7 +144,7 @@ Lpsi = diff(V_deformation+Q_force,chi);
 F_lagrange_psi = diff(Lpsi==0,chi);
 
 % Purely the variance of the deformation potential energy
-dVdtheta = diff(V_deformation);                                             % To find equilibrium points
+dVdtheta = diff(V_deformation,theta);                                      % To find equilibrium points
 
 %% Main Loop for analysis
 eqs = [];
@@ -154,18 +161,21 @@ for theta = linspace(A.theta_min, A.theta_max, N)
     chi = 0;            % Just for now
     F = 0; %eval(subs(F_lagrange_theta));                 % Calculate Force for equilibrium
     %%
-
+    
+    eqflag= false;
+    
     V = eval(subs(V_deformation));              % Calculate potential energy
+    dV = eval(subs(dVdtheta));                  % calculate derivative of potential energy
     if theta ~= A.theta_min
        if simulation == true
            delete(Plots);                           % Delete last plot
        end
               
        % look for equilibria (and save the values at these equilibria)
-        if sign(F)~=sign(F_1)                       % If F changes sign!
+        if sign(dV)~=sign(dV_1)                       % If dV changes sign!
+            eqflag = true;
             theta_eq = eval(subs(theta));
             chi_eq = eval(subs(chi));
-            phi_eq = eval(subs(phi));
 
             if isempty(eqs)
                 eqs = [theta_eq, chi_eq, F, V];
@@ -176,14 +186,14 @@ for theta = linspace(A.theta_min, A.theta_max, N)
     end
     
     if simulation == true
-        Plots = showme(theta,chi,F,V,Objects,name);
+        Plots = showme(theta,chi,F,V,Objects,eqflag,name);
     else
         range = abs(A.theta_min)+abs(A.theta_max);
         progress = (theta+abs(A.theta_min))/range;
         waitbar(progress,f,sprintf('Simulating: theta = %4.4f [rad]',theta));
     end
     
-    F_1 = F;                                            % save last value of F
+    dV_1 = dV;                                            % save last value of F
     pause(0.001);
 end
 if simulation == false
@@ -198,10 +208,11 @@ if equilibria == true
     for i = 1:size(eqs,1)
         clear showme                                        % Clear consistent variables!
         theta = eqs(i,1);
-        F = eqs(i,4);
-        V = eqs(i,5);
+        chi = eqs(i,2);
+        F = eqs(i,3);
+        V = eqs(i,4);
         name = ['Equilibrium ',num2str(i)];
-        Plots = showme(theta,F,V,Fb,Objects,name);
+        Plots = showme(theta,chi,F,V,Objects,eqflag,name);
     end
 end
 

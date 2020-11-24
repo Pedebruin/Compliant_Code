@@ -2,10 +2,10 @@
 <Storage>
   <Project Version="9.1">
     <base-designpoint-name valType="String">0</base-designpoint-name>
-    <timestamp-max valType="Int64">77739</timestamp-max>
+    <timestamp-max valType="Int64">78300</timestamp-max>
     <framework-build-version valType="String">19.5.112.0</framework-build-version>
     <external-version-string valType="String">2019 R3</external-version-string>
-    <last-saved-utc valType="String">11/23/2020 21:41:25</last-saved-utc>
+    <last-saved-utc valType="String">11/24/2020 22:43:15</last-saved-utc>
     <managed-categories valType="String">[report, misc, progress]</managed-categories>
     <logHistory valType="StringArray">
       <ArrayEntry Index="0">Pim Ebbel de Bruin@PIM-LAPTOP:C:\Users\pedeb\AppData\Local\Temp\WorkbenchLogs\CoreEvents10716.log</ArrayEntry>
@@ -24,6 +24,7 @@
       <ArrayEntry Index="13">Daniel@DANIEL-PC:C:\Users\Daniel\AppData\Local\Temp\WorkbenchLogs\CoreEvents5752.log</ArrayEntry>
       <ArrayEntry Index="14">Daniel@DANIEL-PC:C:\Users\Daniel\AppData\Local\Temp\WorkbenchLogs\CoreEvents13320.log</ArrayEntry>
       <ArrayEntry Index="15">Pim Ebbel de Bruin@PIM-LAPTOP:C:\Users\pedeb\AppData\Local\Temp\WorkbenchLogs\CoreEvents14252.log</ArrayEntry>
+      <ArrayEntry Index="16">Pim Ebbel de Bruin@PIM-LAPTOP:C:\Users\pedeb\AppData\Local\Temp\WorkbenchLogs\CoreEvents21788.log</ArrayEntry>
     </logHistory>
     <expression-scope-container valType="String">Parameters</expression-scope-container>
     <project-type valType="String">WB2</project-type>
@@ -4643,7 +4644,7 @@ Licensing path:
       <maxUpdateOrder valType="Double">1</maxUpdateOrder>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">0</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 77738, "Input": 77739, "Output": 1394}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 78298, "Input": 78299, "Output": 1394}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <contains-significant-data valType="Boolean">true</contains-significant-data>
       <Object Name="/Parameters/DesignPoint:0" Version="1.0">
@@ -4665,7 +4666,7 @@ Licensing path:
       <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">0</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 77718, "Input": 75800, "Output": 1397}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 78300, "Input": 75800, "Output": 1397}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <contains-significant-data valType="Boolean">true</contains-significant-data>
       <Object Name="/Schematic/System:Geometry" Version="1.0">
@@ -4676,7 +4677,7 @@ Licensing path:
       <Object Name="/Schematic/System:SYS" Version="1.0">
         <class-type valType="String">System</class-type>
         <object-name valType="String">SYS</object-name>
-        <member-data valType="String">{"DisplayText": "Preloadingl", "Components": [$$c498fa81-c283-4893-a95a-237db73de342, $$3caaa9e2-4ee0-4195-a0ed-1df7dbec4be0, $$dd780b0d-71fd-423d-9ee5-4253564efd8f, $$0c972f45-bd56-4497-a517-8f1635c582ce, $$e026d27d-cb06-4ef3-b422-9d845a247e43, $$ff31901b-f8c0-4981-a321-02423532ff4c], "ComponentGroups": [], "SystemVisible": True, "RequiredComponents": [$$dd780b0d-71fd-423d-9ee5-4253564efd8f, $$0c972f45-bd56-4497-a517-8f1635c582ce], "ExcludedComponentTemplates": [], "Attributes": {"PhysicsType": "Structural", "AnalysisType": "Static", "SolverType": "ANSYS", "SolverTypeDisplayString": "Mechanical APDL", "PhysicsTypeDisplayString": "Structural", "AnalysisTypeDisplayString": "Static Structural", "SystemName": "Static Structural (ANSYS)", "IsCreated": "True", "AlreadyInSystem": "Yes", "VOLATILE:SystemName": "SYS"}, "SystemType": "Static Structural (ANSYS)", "HeaderText": "Static Structural", "SystemTypeAbbreviation": "SYS", "UniqueSystemDirectoryName": "SYS", "Physics": [], "AnalysisType": None, "SystemHelpId": "wb2sb_ststructAN", "AdditionalSystemHelpId": None, "IsParametric": False, "CreatedFromTemplate": $$83e57957-3e69-47fe-87cc-c34d6ecc0751, "Notes": None, "LayoutChildren": [], "LayoutIndex": 0}</member-data>
+        <member-data valType="String">{"DisplayText": "Preloading", "Components": [$$c498fa81-c283-4893-a95a-237db73de342, $$3caaa9e2-4ee0-4195-a0ed-1df7dbec4be0, $$dd780b0d-71fd-423d-9ee5-4253564efd8f, $$0c972f45-bd56-4497-a517-8f1635c582ce, $$e026d27d-cb06-4ef3-b422-9d845a247e43, $$ff31901b-f8c0-4981-a321-02423532ff4c], "ComponentGroups": [], "SystemVisible": True, "RequiredComponents": [$$dd780b0d-71fd-423d-9ee5-4253564efd8f, $$0c972f45-bd56-4497-a517-8f1635c582ce], "ExcludedComponentTemplates": [], "Attributes": {"PhysicsType": "Structural", "AnalysisType": "Static", "SolverType": "ANSYS", "SolverTypeDisplayString": "Mechanical APDL", "PhysicsTypeDisplayString": "Structural", "AnalysisTypeDisplayString": "Static Structural", "SystemName": "Static Structural (ANSYS)", "IsCreated": "True", "AlreadyInSystem": "Yes", "VOLATILE:SystemName": "SYS"}, "SystemType": "Static Structural (ANSYS)", "HeaderText": "Static Structural", "SystemTypeAbbreviation": "SYS", "UniqueSystemDirectoryName": "SYS", "Physics": [], "AnalysisType": None, "SystemHelpId": "wb2sb_ststructAN", "AdditionalSystemHelpId": None, "IsParametric": False, "CreatedFromTemplate": $$83e57957-3e69-47fe-87cc-c34d6ecc0751, "Notes": None, "LayoutChildren": [], "LayoutIndex": 0}</member-data>
         <properties-setByUserFlag-data valType="String">["DisplayText"]</properties-setByUserFlag-data>
       </Object>
       <Object Name="/Schematic/SchematicSettings:Schematic Settings" Version="1.0">
@@ -4771,7 +4772,7 @@ Licensing path:
       <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">0</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 77489, "Input": 1680, "Output": 1680}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 78223, "Input": 1680, "Output": 1680}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <contains-significant-data valType="Boolean">false</contains-significant-data>
     </Container>

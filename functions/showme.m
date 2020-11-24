@@ -1,4 +1,4 @@
-function Plots = showme(theta_n,chi_n,F,V,Objects,name)
+function Plots = showme(theta_n,chi_n,F,V,Objects,eqflag,name)
 %{ 
 The function calculates the correct positions and angles based on a kinematic
 model. This model is then plotted in Figure 1: Analysis.  
@@ -70,10 +70,10 @@ if isempty(findobj('type','figure','name',name)) % create it
         ylabel 'Force [N]'
         xlim(P3x)
 else % or find the figure again! (it is lost between function evaluations)
-    P = findobj('type','figure','name','Analysis');
-    P1 = findobj('type','axes','Xlim',P1x);
-    P2 = findobj('type','axes','xlim',P2x);
-    P3 = findobj('type','axes','xlim',P3x);
+    P = findobj('type','figure','name',name); 
+    P1 = findobj('type','axes','Xlim',P1x,'parent',P);
+    P2 = findobj('type','axes','xlim',P2x,'parent',P);
+    P3 = findobj('type','axes','xlim',P3x,'parent',P);
 end
 
 
@@ -106,13 +106,12 @@ else                                                % single evaluation
 end
 
 %% Plot the equilibriumpoints in P2 & P3
-if length(F_v) >= 2
-    if sign(F_v(end))~=sign(F_v(end-1))
-        xline(P2,theta_n,'k--');
-        xline(P3,theta_n,'k--');
-        disp(['Equilibrium at theta = ',num2str(theta_n)]);
-    end
+if eqflag == true
+    xline(P2,theta_n,'k--');
+    xline(P3,theta_n,'k--');
+    disp(['Equilibrium at theta = ',num2str(theta_n)]);
 end
+
 
 
 %% Plot the mechanism %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

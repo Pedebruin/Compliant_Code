@@ -103,13 +103,13 @@
        2 PARALLEL PROCESSES REQUESTED WITH SINGLE THREAD PER PROCESS
     TOTAL OF     2 CORES REQUESTED
   DESIGNXPLORER REQUESTED
-  INPUT FILE NAME              = C:\Users\pedeb\Desktop\HTE\Compliant\Compliant_Code\_ProjectScratch\ScrD21A\dummy.dat
-  OUTPUT FILE NAME             = C:\Users\pedeb\Desktop\HTE\Compliant\Compliant_Code\_ProjectScratch\ScrD21A\solve.out
+  INPUT FILE NAME              = C:\Users\pedeb\Desktop\HTE\Compliant\Compliant_Code\_ProjectScratch\Scr9674\dummy.dat
+  OUTPUT FILE NAME             = C:\Users\pedeb\Desktop\HTE\Compliant\Compliant_Code\_ProjectScratch\Scr9674\solve.out
   START-UP FILE MODE           = NOREAD
   STOP FILE MODE               = NOREAD
 
  RELEASE= 2019 R3              BUILD= 19.5      UP20190805   VERSION=WINDOWS x64 
- CURRENT JOBNAME=file0  22:17:44  NOV 23, 2020 CP=      0.234
+ CURRENT JOBNAME=file0  23:41:53  NOV 24, 2020 CP=      0.312
 
 
  PARAMETER _DS_PROGRESS =     999.0000000    
@@ -118,722 +118,80 @@
 
 
 
- *** NOTE ***                            CP =       0.406   TIME= 22:17:45
+ *** NOTE ***                            CP =       0.469   TIME= 23:41:53
  The /CONFIG,NOELDB command is not valid in a Distributed ANSYS          
  solution.  Command is ignored.                                          
 
- *GET  _WALLSTRT  FROM  ACTI  ITEM=TIME WALL  VALUE=  22.2958333    
-
- TITLE= 
- FEM--Static Structural (B5)                                                   
-
-
- SET PARAMETER DIMENSIONS ON  _WB_PROJECTSCRATCH_DIR
-  TYPE=STRI  DIMENSIONS=      248        1        1
-
- PARAMETER _WB_PROJECTSCRATCH_DIR(1) = C:\Users\pedeb\Desktop\HTE\Compliant\Compliant_Code\_ProjectScratch\ScrD21A\
-
- SET PARAMETER DIMENSIONS ON  _WB_SOLVERFILES_DIR
-  TYPE=STRI  DIMENSIONS=      248        1        1
-
- PARAMETER _WB_SOLVERFILES_DIR(1) = C:\Users\pedeb\Desktop\HTE\Compliant\Compliant_Code\FEM_files\dp0\SYS\MECH\
-
- SET PARAMETER DIMENSIONS ON  _WB_USERFILES_DIR
-  TYPE=STRI  DIMENSIONS=      248        1        1
-
- PARAMETER _WB_USERFILES_DIR(1) = C:\Users\pedeb\Desktop\HTE\Compliant\Compliant_Code\FEM_files\user_files\
- --- Data in consistent NMM units. See Solving Units in the help system for more
-
- MPA UNITS SPECIFIED FOR INTERNAL    
-  LENGTH      = MILLIMETERS (mm)
-  MASS        = TONNE (Mg)
-  TIME        = SECONDS (sec)
-  TEMPERATURE = CELSIUS (C)
-  TOFFSET     = 273.0
-  FORCE       = NEWTON (N)
-  HEAT        = MILLIJOULES (mJ)
-
- INPUT  UNITS ARE ALSO SET TO MPA 
-
- *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 2019 R3          19.5     ***
- DISTRIBUTED ANSYS Academic Teaching Advanced                  
-
- 00429955  VERSION=WINDOWS x64   22:17:45  NOV 23, 2020 CP=      0.406
-
- FEM--Static Structural (B5)                                                   
-
-
-
-          ***** ANSYS ANALYSIS DEFINITION (PREP7) *****
- *********** Nodes for the whole assembly ***********
- *********** Elements for Body 1 "v2" ***********
- *********** Send User Defined Coordinate System(s) ***********
- *********** Set Reference Temperature ***********
- *********** Send Materials ***********
- *********** Create Displacement Components For Use In Future MSUP Analysis ****
- *********** Fixed Supports ***********
- ******* Constant Zero Displacement X *******
- ******* Constant Zero Displacement Z *******
- *********** Create Displacement Tables and Functions ******
-
-
- ***** ROUTINE COMPLETED *****  CP =         0.594
-
-
- --- Number of total nodes = 30227
- --- Number of contact elements = 0
- --- Number of spring elements = 0
- --- Number of bearing elements = 0
- --- Number of solid elements = 5380
- --- Number of condensed parts = 0
- --- Number of total elements = 5380
-
- *GET  _WALLBSOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  22.2958333    
- ****************************************************************************
- *************************    SOLUTION       ********************************
- ****************************************************************************
+ *GET  _WALLSTRT  FROM  ACTI  ITEM=TIME WALL  VALUE=  23.6980556    
 
  *****  ANSYS SOLUTION ROUTINE  *****
 
+ Graphical-Solution-Tracking set to ON
+ For /MENU,ON or /MENU,GRPH operations, GST ToFile option is ON  
+
 
  PERFORM A STATIC ANALYSIS
-  THIS WILL BE A NEW ANALYSIS
+  RESTART PREVIOUSLY RUN ANALYSIS FROM LOADSTEP     3
+   AND FROM SUBSTEP      7
+  RESTART WILL BE CONTINUED WITH EXISTING LOADSTEP
+  RESTART WILL BE PERFORMED BASED ON INFO FROM- FILENAME: file0.r001                                                                                                                                                                                                                                                          
+   PREVIOUS LOADSTEP =      3 SUBSTEP =      7
 
- LARGE DEFORMATION ANALYSIS
+ RESUME ANSYS DATA FROM FILE NAME=file.rdb                                                                                                                                                                                                                                                            
+     DO NOT PLOT ANYTHING
 
- PARAMETER _THICKRATIO =     1.000000000    
+ *** ANSYS GLOBAL STATUS *** 
 
- USE PRECONDITIONED CONJUGATE GRADIENT SOLVER
-  CONVERGENCE TOLERANCE = 1.00000E-08
-  MAXIMUM ITERATION     = NumNode*DofPerNode*  1.0000    
+ TITLE = FEM--Static Structural (B5)                                           
+ ANALYSIS TYPE =  STATIC (STEADY-STATE)
+ NUMBER OF ELEMENT TYPES =      1
+      3231 ELEMENTS CURRENTLY SELECTED.  MAX ELEMENT NUMBER =        3231
+     18573 NODES CURRENTLY SELECTED.     MAX NODE NUMBER =          18573
+         7 COMPONENTS CURRENTLY DEFINED
+ MAXIMUM LINEAR PROPERTY NUMBER        =       1
+ ACTIVE COORDINATE SYSTEM              =       0  (CARTESIAN)  
+ NUMBER OF SPECIFIED CONSTRAINTS       =     810
+ CURRENT LOAD CASE =      0 OF      0
+ LOAD SET   =       1
+ SUBSTEP    =       1
+ TIME/FREQ  =    1.0000    
 
- CONTACT INFORMATION PRINTOUT LEVEL       1
+ INITIAL JOBNAME = file
+ CURRENT JOBNAME = file0
+
+ RESTART PROCEDURE RE-BUILDS BOUNDARY CONDITIONS
+ AND LOADING INFO UPTO THE CURRENT LOADSTEP 
+
+ READ ANSYS LOADS DATA FROM FILE= file.ldhi                                                                                                                                                                                                                                                           
+
+ DELETE SOLID MODEL BOUNDARY CONDITIONS
+ 
+ NUMBER OF NODAL CONSTRAINTS DELETED                       =       810
+
+ *** NOTE ***                            CP =       0.734   TIME= 23:41:53
+ The number of results set on the restart command is the last set on the 
+ RST file.  No updating for the RST file is required.                    
 
  NLDIAG: Nonlinear diagnostics CONT option is set to ON. 
          Writing frequency : each ITERATION.
 
- DEFINE RESTART CONTROL FOR LOADSTEP LAST
- AT FREQUENCY OF LAST AND NUMBER FOR OVERWRITE IS    0
- ****************************************************
- ******************* SOLVE FOR LS 1 OF 3 ****************
- *** Set Displacements ***
- CMBLOCK read of NODE component _CM39UY_YP  completed
-
- SELECT      COMPONENT _CM39UY_YP                      
-
- SPECIFIED CONSTRAINT UY   FOR SELECTED NODES            1 TO       30227 BY           1
- SET ACCORDING TO TABLE PARAMETER = _LOADVARI39YP
-
- ALL SELECT   FOR ITEM=NODE COMPONENT=    
-  IN RANGE         1 TO      30227 STEP          1
-
-      30227  NODES (OF      30227  DEFINED) SELECTED BY NSEL  COMMAND.
- *** Component For All Non-Zero UY Displacements ***
-
- SELECT      COMPONENT _CM39UY_YP                      
-
- DEFINITION OF COMPONENT = _DISPNONZEROUY  ENTITY=NODE
-
- ALL SELECT   FOR ITEM=NODE COMPONENT=    
-  IN RANGE         1 TO      30227 STEP          1
-
-      30227  NODES (OF      30227  DEFINED) SELECTED BY NSEL  COMMAND.
+ *GET  _WALLASOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  23.6980556    
 
  PRINTOUT RESUMED BY /GOP
 
- USE AUTOMATIC TIME STEPPING THIS LOAD STEP
-
- USE       1 SUBSTEPS INITIALLY THIS LOAD STEP FOR ALL  DEGREES OF FREEDOM
- FOR AUTOMATIC TIME STEPPING:
-   USE     10 SUBSTEPS AS A MAXIMUM
-   USE      1 SUBSTEPS AS A MINIMUM
-
- TIME=  1.0000    
-
- ERASE THE CURRENT DATABASE OUTPUT CONTROL TABLE.
-
-
- WRITE ALL  ITEMS TO THE DATABASE WITH A FREQUENCY OF NONE
-   FOR ALL APPLICABLE ENTITIES
-
- WRITE NSOL ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
-   FOR ALL APPLICABLE ENTITIES
-
- WRITE RSOL ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
-   FOR ALL APPLICABLE ENTITIES
-
- WRITE EANG ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
-   FOR ALL APPLICABLE ENTITIES
-
- WRITE ETMP ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
-   FOR ALL APPLICABLE ENTITIES
-
- WRITE VENG ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
-   FOR ALL APPLICABLE ENTITIES
-
- WRITE STRS ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
-   FOR ALL APPLICABLE ENTITIES
-
- WRITE EPEL ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
-   FOR ALL APPLICABLE ENTITIES
-
- WRITE EPPL ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
-   FOR ALL APPLICABLE ENTITIES
-
- WRITE CONT ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
-   FOR ALL APPLICABLE ENTITIES
-
- *GET  ANSINTER_  FROM  ACTI  ITEM=INT        VALUE=  0.00000000    
-
- *IF  ANSINTER_                         ( =   0.00000     )  NE  
-      0                                 ( =   0.00000     )  THEN    
-
- *ENDIF
-
- *** NOTE ***                            CP =       0.594   TIME= 22:17:45
- The automatic domain decomposition logic has selected the MESH domain   
- decomposition method with 2 processes per solution.                     
-
- *****  ANSYS SOLVE    COMMAND  *****
-
- *** WARNING ***                         CP =       0.625   TIME= 22:17:45
- Element shape checking is currently inactive.  Issue SHPP,ON or         
- SHPP,WARN to reactivate, if desired.                                    
-
- *** NOTE ***                            CP =       0.719   TIME= 22:17:45
- The model data was checked and warning messages were found.             
-  Please review output or errors file (                                  
- C:\Users\pedeb\Desktop\HTE\Compliant\Compliant_Code\_ProjectScratch\Scr 
- rD21A\file0.err ) for these warning messages.                           
-
- *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
-      --- GIVE SUGGESTIONS AND RESET THE KEY OPTIONS ---
-
- ELEMENT TYPE    1 IS SOLID186. KEYOPT(2)=0 IS SUGGESTED AND HAS BEEN RESET.
-  KEYOPT(1-12)=    0    0    0    0    0    0    0    0    0    0    0    0
-
-
-
- *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 2019 R3          19.5     ***
- DISTRIBUTED ANSYS Academic Teaching Advanced                  
-
- 00429955  VERSION=WINDOWS x64   22:17:45  NOV 23, 2020 CP=      0.719
-
- FEM--Static Structural (B5)                                                   
-
-
-
-                       S O L U T I O N   O P T I O N S
-
-   PROBLEM DIMENSIONALITY. . . . . . . . . . . . .3-D                  
-   DEGREES OF FREEDOM. . . . . . UX   UY   UZ  
-   ANALYSIS TYPE . . . . . . . . . . . . . . . . .STATIC (STEADY-STATE)
-   OFFSET TEMPERATURE FROM ABSOLUTE ZERO . . . . .  273.15    
-   NONLINEAR GEOMETRIC EFFECTS . . . . . . . . . .ON
-   EQUATION SOLVER OPTION. . . . . . . . . . . . .PCG                
-      TOLERANCE. . . . . . . . . . . . . . . . . . 1.00000E-08
-   NEWTON-RAPHSON OPTION . . . . . . . . . . . . .PROGRAM CHOSEN   
-   GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC  
-
- *** NOTE ***                            CP =       0.719   TIME= 22:17:45
- This nonlinear analysis defaults to using the full Newton-Raphson       
- solution procedure.  This can be modified using the NROPT command.      
-
- *** NOTE ***                            CP =       0.719   TIME= 22:17:45
- The conditions for direct assembly have been met.  No .emat or .erot    
- files will be produced.                                                 
-
-  
-  
-     D I S T R I B U T E D   D O M A I N   D E C O M P O S E R
-  
-  ...Number of elements: 5380
-  ...Number of nodes:    30227
-  ...Decompose to 2 CPU domains
-  ...Element load balance ratio =     1.000
-
-
-                      L O A D   S T E P   O P T I O N S
-
-   LOAD STEP NUMBER. . . . . . . . . . . . . . . .     1
-   TIME AT END OF THE LOAD STEP. . . . . . . . . .  1.0000    
-   AUTOMATIC TIME STEPPING . . . . . . . . . . . .    ON
-      INITIAL NUMBER OF SUBSTEPS . . . . . . . . .     1
-      MAXIMUM NUMBER OF SUBSTEPS . . . . . . . . .    10
-      MINIMUM NUMBER OF SUBSTEPS . . . . . . . . .     1
-   MAXIMUM NUMBER OF EQUILIBRIUM ITERATIONS. . . .    15
-   STEP CHANGE BOUNDARY CONDITIONS . . . . . . . .    NO
-   STRESS-STIFFENING . . . . . . . . . . . . . . .    ON
-   TERMINATE ANALYSIS IF NOT CONVERGED . . . . . .YES (EXIT)  
-   CONVERGENCE CONTROLS. . . . . . . . . . . . . .USE DEFAULTS
-   PRINT OUTPUT CONTROLS . . . . . . . . . . . . .NO PRINTOUT
-   DATABASE OUTPUT CONTROLS
-      ITEM     FREQUENCY   COMPONENT
-       ALL       NONE               
-      NSOL        ALL               
-      RSOL        ALL               
-      EANG        ALL               
-      ETMP        ALL               
-      VENG        ALL               
-      STRS        ALL               
-      EPEL        ALL               
-      EPPL        ALL               
-      CONT        ALL               
-
-
- SOLUTION MONITORING INFO IS WRITTEN TO FILE= file.mntr                                                                                                                                                                                                                                                           
-
-
- *** NOTE ***                            CP =       1.047   TIME= 22:17:45
- The PCG solver has automatically set the level of difficulty for this   
- model to 2.                                                             
-
-
-                         ***********  PRECISE MASS SUMMARY  ***********
-
-   TOTAL RIGID BODY MASS MATRIX ABOUT ORIGIN
-               Translational mass               |   Coupled translational/rotational mass
-        0.13062E-03    0.0000        0.0000     |     0.0000       0.32655E-03  -0.78747E-02
-         0.0000       0.13062E-03    0.0000     |   -0.32655E-03    0.0000       0.43336E-02
-         0.0000        0.0000       0.13062E-03 |    0.78747E-02  -0.43336E-02    0.0000    
-     ------------------------------------------ | ------------------------------------------
-                                                |         Rotational mass (inertia)
-                                                |    0.72804      -0.27131      -0.10834E-01
-                                                |   -0.27131       0.22802      -0.19687E-01
-                                                |   -0.10834E-01  -0.19687E-01   0.95389    
-
-   TOTAL MASS = 0.13062E-03
-     The mass principal axes coincide with the global Cartesian axes
-
-   CENTER OF MASS (X,Y,Z)=    33.177        60.287        2.5000    
-
-   TOTAL INERTIA ABOUT CENTER OF MASS
-        0.25249      -0.10055E-01   0.18851E-16
-       -0.10055E-01   0.83433E-01  -0.15746E-18
-        0.18851E-16  -0.15746E-18   0.33538    
-
-   PRINCIPAL INERTIAS =   0.25308       0.82837E-01   0.33538    
-   ORIENTATION VECTORS OF THE INERTIA PRINCIPAL AXES IN GLOBAL CARTESIAN
-     ( 0.998,-0.059,-0.000) ( 0.059, 0.998,-0.000) ( 0.000,-0.000, 1.000) 
-
-
-  *** MASS SUMMARY BY ELEMENT TYPE ***
-
-  TYPE      MASS
-     1  0.130621E-03
-
- Range of element maximum matrix coefficients in global coordinates
- Maximum = 18488757.3 at element 4432.                                   
- Minimum = 77317.0671 at element 432.                                    
-
-   *** ELEMENT MATRIX FORMULATION TIMES
-     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
-
-        1      5380  SOLID186      1.328   0.000247
- Time at end of element matrix formulation CP = 1.9375.                  
-
- ALL CURRENT ANSYS DATA WRITTEN TO FILE NAME= file.rdb
-  FOR POSSIBLE RESUME FROM THIS POINT
-     FORCE CONVERGENCE VALUE  =  0.1129E+08  CRITERION=  0.5761E+05
- curEqn=   8062  totEqn=   8062 Job CP sec=      2.203
-      Factor Done= 100% Factor Wall sec=      0.040 rate=    7817.2 Mflops
- Iteration=     5 Ratio=  9.809430E-02 Limit=  1.000000E-08 Wall=     0.0
- Iteration=    50 Ratio=  7.620705E-04 Limit=  1.000000E-08 Wall=     0.5
- Iteration=   185 Ratio=  2.755642E-06 Limit=  1.000000E-08 Wall=     2.0
-
- DISTRIBUTED PCG SOLVER SOLUTION CONVERGED
-
- DISTRIBUTED PCG SOLVER SOLUTION STATISTICS
-
-   NUMBER OF DOMAINS   =         149
-   NUMBER OF ITERATIONS=         351
-   NUMBER OF EQUATIONS =       90681
-   LEVEL OF CONVERGENCE=           1
-   CALCULATED NORM     = 0.98805E-08
-   SPECIFIED TOLERANCE = 0.10000E-07
-   TOTAL CPU TIME (sec)=        4.14
-   TOTAL WALL TIME(sec)=        4.30
-   TOTAL MEMORY (GB)   =        0.07
-
-     DISP CONVERGENCE VALUE   =   5.000      CRITERION=  0.2551    
-    EQUIL ITER   1 COMPLETED.  NEW TRIANG MATRIX.  MAX DOF INC=  -5.000    
-     FORCE CONVERGENCE VALUE  =  0.8133E+05  CRITERION=  0.3130E-01
-     DISP CONVERGENCE VALUE   =  0.3853      CRITERION=  0.2603    
-    EQUIL ITER   2 COMPLETED.  NEW TRIANG MATRIX.  MAX DOF INC= -0.3853    
-     FORCE CONVERGENCE VALUE  =   2267.      CRITERION=  0.1319    
-     DISP CONVERGENCE VALUE   =  0.6213E+05  CRITERION=   3301.    
-    EQUIL ITER   3 COMPLETED.  NEW TRIANG MATRIX.  MAX DOF INC=  0.6213E+05
-
- *** ERROR ***                           CP =     284.391   TIME= 22:22:38
- Element 210 (type = 1, SOLID186) (and maybe other elements) has become  
- highly distorted.  Excessive distortion of elements is usually a        
- symptom indicating the need for corrective action elsewhere.  Try       
- incrementing the load more slowly (increase the number of substeps or   
- decrease the time step size).  You may need to improve your mesh to     
- obtain elements with better aspect ratios.  Also consider the behavior  
- of materials, contact pairs, and/or constraint equations.  Please rule  
- out other root causes of this failure before attempting rezoning or     
- nonlinear adaptive solutions.  If this message appears in the first     
- iteration of first substep, be sure to perform element shape checking.  
- *** LOAD STEP     1   SUBSTEP     1  NOT COMPLETED.  CUM ITER =      4
- *** BEGIN BISECTION NUMBER   1    NEW TIME INCREMENT=  0.35000    
-
-
- Range of element maximum matrix coefficients in global coordinates
- Maximum = 18488757.3 at element 4432.                                   
- Minimum = 77317.0671 at element 432.                                    
-     FORCE CONVERGENCE VALUE  =  0.3952E+07  CRITERION=  0.2016E+05
-     DISP CONVERGENCE VALUE   =   1.750      CRITERION=  0.8929E-01
-    EQUIL ITER   1 COMPLETED.  NEW TRIANG MATRIX.  MAX DOF INC=  -1.750    
-     FORCE CONVERGENCE VALUE  =   9906.      CRITERION=  0.1095E-01
-     DISP CONVERGENCE VALUE   =  0.4642E-01  CRITERION=  0.9111E-01 <<< CONVERGED
-    EQUIL ITER   2 COMPLETED.  NEW TRIANG MATRIX.  MAX DOF INC= -0.4642E-01
-     FORCE CONVERGENCE VALUE  =   33.26      CRITERION=  0.1329E-01
-     DISP CONVERGENCE VALUE   =  0.4366E-01  CRITERION=  0.9297E-01 <<< CONVERGED
-    EQUIL ITER   3 COMPLETED.  NEW TRIANG MATRIX.  MAX DOF INC=  0.4366E-01
-     FORCE CONVERGENCE VALUE  =   15.42      CRITERION=  0.1142E-01
-     DISP CONVERGENCE VALUE   =  0.7672E-03  CRITERION=  0.9487E-01 <<< CONVERGED
-    EQUIL ITER   4 COMPLETED.  NEW TRIANG MATRIX.  MAX DOF INC=  0.7672E-03
-     FORCE CONVERGENCE VALUE  =  0.4115E-02  CRITERION=  0.1169E-01 <<< CONVERGED
-    >>> SOLUTION CONVERGED AFTER EQUILIBRIUM ITERATION   4
-
-   *** ELEMENT RESULT CALCULATION TIMES
-     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
-
-        1      5380  SOLID186      0.672   0.000125
-
-   *** NODAL LOAD CALCULATION TIMES
-     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
-
-        1      5380  SOLID186      0.109   0.000020
- *** LOAD STEP     1   SUBSTEP     1  COMPLETED.    CUM ITER =      7
- *** TIME =  0.350000         TIME INC =  0.350000    
- *** AUTO STEP TIME:  NEXT TIME INC = 0.35000      UNCHANGED
-
-     FORCE CONVERGENCE VALUE  =  0.1998E+05  CRITERION=  0.2157E-01
-     DISP CONVERGENCE VALUE   =  0.9367E-01  CRITERION=  0.8929E-01
-    EQUIL ITER   1 COMPLETED.  NEW TRIANG MATRIX.  MAX DOF INC= -0.9367E-01
-     FORCE CONVERGENCE VALUE  =   118.8      CRITERION=  0.3026E-01
-     DISP CONVERGENCE VALUE   =  0.9093E-01  CRITERION=  0.9111E-01 <<< CONVERGED
-    EQUIL ITER   2 COMPLETED.  NEW TRIANG MATRIX.  MAX DOF INC=  0.9093E-01
-     FORCE CONVERGENCE VALUE  =   69.16      CRITERION=  0.2220E-01
-     DISP CONVERGENCE VALUE   =  0.5294E-02  CRITERION=  0.9297E-01 <<< CONVERGED
-    EQUIL ITER   3 COMPLETED.  NEW TRIANG MATRIX.  MAX DOF INC=  0.5294E-02
-     FORCE CONVERGENCE VALUE  =  0.3318      CRITERION=  0.2306E-01
-     DISP CONVERGENCE VALUE   =  0.2579E-02  CRITERION=  0.9487E-01 <<< CONVERGED
-    EQUIL ITER   4 COMPLETED.  NEW TRIANG MATRIX.  MAX DOF INC=  0.2579E-02
-     FORCE CONVERGENCE VALUE  =  0.7307E-01  CRITERION=  0.2353E-01
-     DISP CONVERGENCE VALUE   =  0.3834E-05  CRITERION=  0.9680E-01 <<< CONVERGED
-    EQUIL ITER   5 COMPLETED.  NEW TRIANG MATRIX.  MAX DOF INC=  0.3834E-05
-     FORCE CONVERGENCE VALUE  =  0.2883E-05  CRITERION=  0.2401E-01 <<< CONVERGED
-    >>> SOLUTION CONVERGED AFTER EQUILIBRIUM ITERATION   5
- *** LOAD STEP     1   SUBSTEP     2  COMPLETED.    CUM ITER =     12
- *** TIME =  0.700000         TIME INC =  0.350000    
- *** AUTO TIME STEP:  NEXT TIME INC = 0.30000      DECREASED (FACTOR = 0.8571)
-
-     FORCE CONVERGENCE VALUE  =  0.1627E+05  CRITERION=  0.3106E-01
-     DISP CONVERGENCE VALUE   =  0.7565E-01  CRITERION=  0.8929E-01 <<< CONVERGED
-    EQUIL ITER   1 COMPLETED.  NEW TRIANG MATRIX.  MAX DOF INC= -0.7565E-01
-     FORCE CONVERGENCE VALUE  =   76.57      CRITERION=  0.3821E-01
-     DISP CONVERGENCE VALUE   =  0.7669E-01  CRITERION=  0.9111E-01 <<< CONVERGED
-    EQUIL ITER   2 COMPLETED.  NEW TRIANG MATRIX.  MAX DOF INC=  0.7669E-01
-     FORCE CONVERGENCE VALUE  =   49.82      CRITERION=  0.3230E-01
-     DISP CONVERGENCE VALUE   =  0.3001E-02  CRITERION=  0.9297E-01 <<< CONVERGED
-    EQUIL ITER   3 COMPLETED.  NEW TRIANG MATRIX.  MAX DOF INC=  0.3001E-02
-     FORCE CONVERGENCE VALUE  =  0.8502E-01  CRITERION=  0.3316E-01
-     DISP CONVERGENCE VALUE   =  0.1174E-02  CRITERION=  0.9487E-01 <<< CONVERGED
-    EQUIL ITER   4 COMPLETED.  NEW TRIANG MATRIX.  MAX DOF INC=  0.1174E-02
-     FORCE CONVERGENCE VALUE  =  0.1541E-01  CRITERION=  0.3383E-01 <<< CONVERGED
-    >>> SOLUTION CONVERGED AFTER EQUILIBRIUM ITERATION   4
- *** LOAD STEP     1   SUBSTEP     3  COMPLETED.    CUM ITER =     16
- *** TIME =   1.00000         TIME INC =  0.300000    
-
- *** NOTE ***                            CP =     823.750   TIME= 22:31:50
- During this loadstep the PCG iterative solver took more than 1000       
- iterations to solve the system of equations.  In the future it may be   
- more efficient to choose a direct solver, such as the SPARSE solver,    
- for this analysis.                                                      
-
-
- *** ANSYS BINARY FILE STATISTICS
-  BUFFER SIZE USED= 16384
-       17.562 MB WRITTEN ON ELEMENT SAVED DATA FILE: file0.esav
-        8.125 MB WRITTEN ON RESULTS FILE: file0.rst
- *************** Write FE CONNECTORS *********
-
- WRITE OUT CONSTRAINT EQUATIONS TO FILE= file.ce                                                                                                                                                                                                                                                             
- ****************************************************
- *************** FINISHED SOLVE FOR LS 1 *************
- ****************************************************
- ******************* SOLVE FOR LS 2 OF 3 ****************
- *** Set Displacements ***
-
- PRINTOUT RESUMED BY /GOP
-
- USE AUTOMATIC TIME STEPPING THIS LOAD STEP
-
- USE       1 SUBSTEPS INITIALLY THIS LOAD STEP FOR ALL  DEGREES OF FREEDOM
- FOR AUTOMATIC TIME STEPPING:
-   USE     10 SUBSTEPS AS A MAXIMUM
-   USE      1 SUBSTEPS AS A MINIMUM
-
- TIME=  2.0000    
-
- ERASE THE CURRENT DATABASE OUTPUT CONTROL TABLE.
-
-
- WRITE ALL  ITEMS TO THE DATABASE WITH A FREQUENCY OF NONE
-   FOR ALL APPLICABLE ENTITIES
-
- WRITE NSOL ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
-   FOR ALL APPLICABLE ENTITIES
-
- WRITE RSOL ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
-   FOR ALL APPLICABLE ENTITIES
-
- WRITE EANG ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
-   FOR ALL APPLICABLE ENTITIES
-
- WRITE ETMP ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
-   FOR ALL APPLICABLE ENTITIES
-
- WRITE VENG ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
-   FOR ALL APPLICABLE ENTITIES
-
- WRITE STRS ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
-   FOR ALL APPLICABLE ENTITIES
-
- WRITE EPEL ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
-   FOR ALL APPLICABLE ENTITIES
-
- WRITE EPPL ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
-   FOR ALL APPLICABLE ENTITIES
-
- WRITE CONT ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
-   FOR ALL APPLICABLE ENTITIES
-
- *****  ANSYS SOLVE    COMMAND  *****
-
- *** NOTE ***                            CP =     823.844   TIME= 22:31:50
- This nonlinear analysis defaults to using the full Newton-Raphson       
- solution procedure.  This can be modified using the NROPT command.      
-
- *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 2019 R3          19.5     ***
- DISTRIBUTED ANSYS Academic Teaching Advanced                  
-
- 00429955  VERSION=WINDOWS x64   22:31:50  NOV 23, 2020 CP=    823.875
-
- FEM--Static Structural (B5)                                                   
-
-
-
-                      L O A D   S T E P   O P T I O N S
-
-   LOAD STEP NUMBER. . . . . . . . . . . . . . . .     2
-   TIME AT END OF THE LOAD STEP. . . . . . . . . .  2.0000    
-   AUTOMATIC TIME STEPPING . . . . . . . . . . . .    ON
-      INITIAL NUMBER OF SUBSTEPS . . . . . . . . .     1
-      MAXIMUM NUMBER OF SUBSTEPS . . . . . . . . .    10
-      MINIMUM NUMBER OF SUBSTEPS . . . . . . . . .     1
-   MAXIMUM NUMBER OF EQUILIBRIUM ITERATIONS. . . .    15
-   STEP CHANGE BOUNDARY CONDITIONS . . . . . . . .    NO
-   STRESS-STIFFENING . . . . . . . . . . . . . . .    ON
-   TERMINATE ANALYSIS IF NOT CONVERGED . . . . . .YES (EXIT)  
-   CONVERGENCE CONTROLS. . . . . . . . . . . . . .USE DEFAULTS
-   PRINT OUTPUT CONTROLS . . . . . . . . . . . . .NO PRINTOUT
-   DATABASE OUTPUT CONTROLS
-      ITEM     FREQUENCY   COMPONENT
-       ALL       NONE               
-      NSOL        ALL               
-      RSOL        ALL               
-      EANG        ALL               
-      ETMP        ALL               
-      VENG        ALL               
-      STRS        ALL               
-      EPEL        ALL               
-      EPPL        ALL               
-      CONT        ALL               
-
-
- SOLUTION MONITORING INFO IS WRITTEN TO FILE= file.mntr                                                                                                                                                                                                                                                           
-
-     FORCE CONVERGENCE VALUE  =  0.4517E+07  CRITERION=  0.2305E+05
-     DISP CONVERGENCE VALUE   =   2.000      CRITERION=  0.3572    
-    EQUIL ITER   1 COMPLETED.  NEW TRIANG MATRIX.  MAX DOF INC=  -2.000    
-     FORCE CONVERGENCE VALUE  =  0.1401E+05  CRITERION=  0.4489E-01
-     DISP CONVERGENCE VALUE   =  0.6357E-01  CRITERION=  0.3644     <<< CONVERGED
-    EQUIL ITER   2 COMPLETED.  NEW TRIANG MATRIX.  MAX DOF INC= -0.6357E-01
-     FORCE CONVERGENCE VALUE  =   62.21      CRITERION=  0.5147E-01
-     DISP CONVERGENCE VALUE   =  0.6760E-01  CRITERION=  0.3719     <<< CONVERGED
-    EQUIL ITER   3 COMPLETED.  NEW TRIANG MATRIX.  MAX DOF INC=  0.6760E-01
-     FORCE CONVERGENCE VALUE  =   40.01      CRITERION=  0.4677E-01
-     DISP CONVERGENCE VALUE   =  0.1783E-02  CRITERION=  0.3795     <<< CONVERGED
-    EQUIL ITER   4 COMPLETED.  NEW TRIANG MATRIX.  MAX DOF INC=  0.1783E-02
-     FORCE CONVERGENCE VALUE  =  0.3509E-01  CRITERION=  0.4787E-01 <<< CONVERGED
-    >>> SOLUTION CONVERGED AFTER EQUILIBRIUM ITERATION   4
- *** LOAD STEP     2   SUBSTEP     1  COMPLETED.    CUM ITER =     20
- *** TIME =   2.00000         TIME INC =   1.00000    
-
- *** NOTE ***                            CP =     954.797   TIME= 22:34:03
- During this loadstep the PCG iterative solver took more than 1000       
- iterations to solve the system of equations.  In the future it may be   
- more efficient to choose a direct solver, such as the SPARSE solver,    
- for this analysis.                                                      
- ****************************************************
- *************** FINISHED SOLVE FOR LS 2 *************
- ****************************************************
- ******************* SOLVE FOR LS 3 OF 3 ****************
- *** Set Displacements ***
-
- PRINTOUT RESUMED BY /GOP
-
- USE AUTOMATIC TIME STEPPING THIS LOAD STEP
-
- USE INITIAL TIME STEP SIZE OF 0.2000000     FOR ALL  DEGREES OF FREEDOM
- FOR AUTOMATIC TIME STEPPING:
-   USE 0.3846150E-01 AS THE MINIMUM TIME STEP SIZE
-   USE  1.000000     AS THE MAXIMUM TIME STEP SIZE
-
- TIME=  3.0000    
-
- ERASE THE CURRENT DATABASE OUTPUT CONTROL TABLE.
-
-
- WRITE ALL  ITEMS TO THE DATABASE WITH A FREQUENCY OF NONE
-   FOR ALL APPLICABLE ENTITIES
-
- WRITE NSOL ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
-   FOR ALL APPLICABLE ENTITIES
-
- WRITE RSOL ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
-   FOR ALL APPLICABLE ENTITIES
-
- WRITE EANG ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
-   FOR ALL APPLICABLE ENTITIES
-
- WRITE ETMP ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
-   FOR ALL APPLICABLE ENTITIES
-
- WRITE VENG ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
-   FOR ALL APPLICABLE ENTITIES
-
- WRITE STRS ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
-   FOR ALL APPLICABLE ENTITIES
-
- WRITE EPEL ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
-   FOR ALL APPLICABLE ENTITIES
-
- WRITE EPPL ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
-   FOR ALL APPLICABLE ENTITIES
-
- WRITE CONT ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
-   FOR ALL APPLICABLE ENTITIES
-
- *****  ANSYS SOLVE    COMMAND  *****
-
- *** NOTE ***                            CP =     954.844   TIME= 22:34:03
- This nonlinear analysis defaults to using the full Newton-Raphson       
- solution procedure.  This can be modified using the NROPT command.      
-
- *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 2019 R3          19.5     ***
- DISTRIBUTED ANSYS Academic Teaching Advanced                  
-
- 00429955  VERSION=WINDOWS x64   22:34:03  NOV 23, 2020 CP=    954.875
-
- FEM--Static Structural (B5)                                                   
-
-
-
-                      L O A D   S T E P   O P T I O N S
-
-   LOAD STEP NUMBER. . . . . . . . . . . . . . . .     3
-   TIME AT END OF THE LOAD STEP. . . . . . . . . .  3.0000    
-   AUTOMATIC TIME STEPPING . . . . . . . . . . . .    ON
-      STARTING TIME STEP SIZE. . . . . . . . . . . 0.20000    
-      MINIMUM TIME STEP SIZE . . . . . . . . . . . 0.38461E-01
-      MAXIMUM TIME STEP SIZE . . . . . . . . . . .  1.0000    
-   MAXIMUM NUMBER OF EQUILIBRIUM ITERATIONS. . . .    15
-   STEP CHANGE BOUNDARY CONDITIONS . . . . . . . .    NO
-   STRESS-STIFFENING . . . . . . . . . . . . . . .    ON
-   TERMINATE ANALYSIS IF NOT CONVERGED . . . . . .YES (EXIT)  
-   CONVERGENCE CONTROLS. . . . . . . . . . . . . .USE DEFAULTS
-   PRINT OUTPUT CONTROLS . . . . . . . . . . . . .NO PRINTOUT
-   DATABASE OUTPUT CONTROLS
-      ITEM     FREQUENCY   COMPONENT
-       ALL       NONE               
-      NSOL        ALL               
-      RSOL        ALL               
-      EANG        ALL               
-      ETMP        ALL               
-      VENG        ALL               
-      STRS        ALL               
-      EPEL        ALL               
-      EPPL        ALL               
-      CONT        ALL               
-
-
- SOLUTION MONITORING INFO IS WRITTEN TO FILE= file.mntr                                                                                                                                                                                                                                                           
-
-     FORCE CONVERGENCE VALUE  =  0.3509E-01  CRITERION=  0.4415E-01
-     DISP CONVERGENCE VALUE   =  0.4191E-03  CRITERION=  0.3572     <<< CONVERGED
-    EQUIL ITER   1 COMPLETED.  NEW TRIANG MATRIX.  MAX DOF INC=  0.4191E-03
-     FORCE CONVERGENCE VALUE  =  0.1895E-02  CRITERION=  0.4505E-01 <<< CONVERGED
-    >>> SOLUTION CONVERGED AFTER EQUILIBRIUM ITERATION   1
- *** LOAD STEP     3   SUBSTEP     1  COMPLETED.    CUM ITER =     21
- *** TIME =   2.20000         TIME INC =  0.200000    
- *** AUTO STEP TIME:  NEXT TIME INC = 0.20000      UNCHANGED
-
-     FORCE CONVERGENCE VALUE  =  0.3401E-01  CRITERION=  0.4415E-01
-     DISP CONVERGENCE VALUE   =  0.4190E-03  CRITERION=  0.3572     <<< CONVERGED
-    EQUIL ITER   1 COMPLETED.  NEW TRIANG MATRIX.  MAX DOF INC= -0.4190E-03
-     FORCE CONVERGENCE VALUE  =  0.1895E-02  CRITERION=  0.4505E-01 <<< CONVERGED
-    >>> SOLUTION CONVERGED AFTER EQUILIBRIUM ITERATION   1
- *** LOAD STEP     3   SUBSTEP     2  COMPLETED.    CUM ITER =     22
- *** TIME =   2.40000         TIME INC =  0.200000    
- *** AUTO TIME STEP:  NEXT TIME INC = 0.30000      INCREASED (FACTOR = 1.5000)
-
-     FORCE CONVERGENCE VALUE  =  0.1895E-02  CRITERION=  0.4415E-01
-     DISP CONVERGENCE VALUE   =  0.5941E-07  CRITERION=  0.3572     <<< CONVERGED
-    EQUIL ITER   1 COMPLETED.  NEW TRIANG MATRIX.  MAX DOF INC= -0.5941E-07
-     FORCE CONVERGENCE VALUE  =  0.2573E-07  CRITERION=  0.4505E-01 <<< CONVERGED
-    >>> SOLUTION CONVERGED AFTER EQUILIBRIUM ITERATION   1
- *** LOAD STEP     3   SUBSTEP     3  COMPLETED.    CUM ITER =     23
- *** TIME =   2.70000         TIME INC =  0.300000    
- *** AUTO STEP TIME:  NEXT TIME INC = 0.30000      UNCHANGED
-
-     FORCE CONVERGENCE VALUE  =  0.1895E-02  CRITERION=  0.4415E-01
-     DISP CONVERGENCE VALUE   =  0.1386E-07  CRITERION=  0.3572     <<< CONVERGED
-    EQUIL ITER   1 COMPLETED.  NEW TRIANG MATRIX.  MAX DOF INC= -0.1386E-07
-     FORCE CONVERGENCE VALUE  =  0.7185E-08  CRITERION=  0.4505E-01 <<< CONVERGED
-    >>> SOLUTION CONVERGED AFTER EQUILIBRIUM ITERATION   1
- *** LOAD STEP     3   SUBSTEP     4  COMPLETED.    CUM ITER =     24
- *** TIME =   3.00000         TIME INC =  0.300000    
-
- *** NOTE ***                            CP =    1151.422   TIME= 22:37:22
- During this loadstep the PCG iterative solver took more than 1000       
- iterations to solve the system of equations.  In the future it may be   
- more efficient to choose a direct solver, such as the SPARSE solver,    
- for this analysis.                                                      
- ****************************************************
- *************** FINISHED SOLVE FOR LS 3 *************
-
- *GET  _WALLASOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  22.6227778    
-
- PRINTOUT RESUMED BY /GOP
-
- *GET  _PCGITER  FROM  ACTI  ITEM=SOLU CGIT  VALUE=  3238.00000    
+ *GET  _PCGITER  FROM  ACTI  ITEM=SOLU CGIT  VALUE=  0.00000000    
 
  FINISH SOLUTION PROCESSING
 
 
- ***** ROUTINE COMPLETED *****  CP =      1151.703
+ ***** ROUTINE COMPLETED *****  CP =         0.734
 
 
 
  *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 2019 R3          19.5     ***
  DISTRIBUTED ANSYS Academic Teaching Advanced                  
 
- 00429955  VERSION=WINDOWS x64   22:37:23  NOV 23, 2020 CP=   1151.703
+ 00429955  VERSION=WINDOWS x64   23:41:53  NOV 24, 2020 CP=      0.734
 
  FEM--Static Structural (B5)                                                   
 
@@ -841,7 +199,7 @@
 
           ***** ANSYS RESULTS INTERPRETATION (POST1) *****
 
- *** NOTE ***                            CP =    1151.719   TIME= 22:37:23
+ *** NOTE ***                            CP =       0.734   TIME= 23:41:53
  Reading results into the database (SET command) will update the current 
  displacement and force boundary conditions in the database with the     
  values from the results file for that load set.  Note that any          
@@ -859,47 +217,40 @@
  EXIT THE ANSYS POST1 DATABASE PROCESSOR
 
 
- ***** ROUTINE COMPLETED *****  CP =      1151.750
+ ***** ROUTINE COMPLETED *****  CP =         0.734
 
 
 
  PRINTOUT RESUMED BY /GOP
 
- *GET  _WALLDONE  FROM  ACTI  ITEM=TIME WALL  VALUE=  22.6230556    
+ *GET  _WALLDONE  FROM  ACTI  ITEM=TIME WALL  VALUE=  23.6980556    
 
  PARAMETER _PREPTIME =     0.000000000    
 
- PARAMETER _SOLVTIME =     1177.000000    
+ PARAMETER _SOLVTIME =     2326.000000    
 
- PARAMETER _POSTTIME =     1.000000000    
+ PARAMETER _POSTTIME =     0.000000000    
 
- PARAMETER _TOTALTIM =     1178.000000    
+ PARAMETER _TOTALTIM =     2326.000000    
 
- *GET  _DLBRATIO  FROM  ACTI  ITEM=SOLU DLBR  VALUE=  1.00000000    
+ *GET  _DLBRATIO  FROM  ACTI  ITEM=SOLU DLBR  VALUE=  1.00061920    
 
- *GET  _COMBTIME  FROM  ACTI  ITEM=SOLU COMB  VALUE= 0.461673200    
- --- Number of total nodes = 30227
- --- Number of total elements = 5380
- --- Element load balance ratio = 1
- --- Time to combine distributed files = 0.4616732
+ *GET  _COMBTIME  FROM  ACTI  ITEM=SOLU COMB  VALUE=  0.00000000    
+ --- Number of total nodes = 18573
+ --- Number of total elements = 3231
+ --- Element load balance ratio = 1.0006192
+ --- Time to combine distributed files = 0
 
  EXIT ANSYS WITHOUT SAVING DATABASE
 
 
- NUMBER OF WARNING MESSAGES ENCOUNTERED=          1
- NUMBER OF ERROR   MESSAGES ENCOUNTERED=          1
-
- *** NOTE ***                            CP =    1151.938   TIME= 22:37:23
- The solution for the current simulation was performed using 2 cores.    
- The parallel performance of this simulation on this hardware indicates  
- that this simulation would benefit from using additional CPU cores.     
- Consider using more CPU cores, which may require additional HPC         
- licenses, when running this simulation again on the same hardware.      
+ NUMBER OF WARNING MESSAGES ENCOUNTERED=          0
+ NUMBER OF ERROR   MESSAGES ENCOUNTERED=          0
 
 +--------- D I S T R I B U T E D   A N S Y S   S T A T I S T I C S ------------+
 
 Release: 2019 R3            Build: 19.5       Update: UP20190805   Platform: WINDOWS x64 
-Date Run: 11/23/2020   Time: 22:37     Process ID: 8804
+Date Run: 11/24/2020   Time: 23:41     Process ID: 22112
 Operating System: Windows 10  (Build: 18363)
 
 Processor Model: Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz
@@ -925,31 +276,29 @@ Input File: dummy.dat
 
   Core                Machine Name   Working Directory
  -----------------------------------------------------
-     0                  PIM-Laptop   C:\Users\pedeb\Desktop\HTE\Compliant\Compliant_Code\_ProjectScratch\ScrD21A
-     1                  PIM-Laptop   C:\Users\pedeb\Desktop\HTE\Compliant\Compliant_Code\_ProjectScratch\ScrD21A
+     0                  PIM-Laptop   C:\Users\pedeb\Desktop\HTE\Compliant\Compliant_Code\_ProjectScratch\Scr9674
+     1                  PIM-Laptop   C:\Users\pedeb\Desktop\HTE\Compliant\Compliant_Code\_ProjectScratch\Scr9674
  
-Latency time from master to core     1 =    4.967 microseconds
+Latency time from master to core     1 =    5.339 microseconds
  
-Communication speed from master to core     1 =  2102.54 MB/sec
+Communication speed from master to core     1 =  2578.24 MB/sec
 
-Total CPU time for main thread                    :     1151.6 seconds
-Total CPU time summed for all threads             :     1151.9 seconds
+Total CPU time for main thread                    :        0.9 seconds
+Total CPU time summed for all threads             :        1.0 seconds
 
-Elapsed time spent pre-processing model (/PREP7)  :        0.1 seconds
-Elapsed time spent solution - preprocessing       :        0.3 seconds
-Elapsed time spent computing solution             :     1177.1 seconds
-Elapsed time spent solution - postprocessing      :        0.5 seconds
+Elapsed time spent pre-processing model (/PREP7)  :        0.0 seconds
+Elapsed time spent solution - preprocessing       :        0.0 seconds
+Elapsed time spent computing solution             :        0.0 seconds
+Elapsed time spent solution - postprocessing      :        0.0 seconds
 Elapsed time spent post-processing model (/POST1) :        0.0 seconds
  
-Equation solver used                              :            PCG (symmetric)
-Equation solver computational rate                :        4.1 Gflops
 
-Maximum total memory used                         :      235.0 MB
+Maximum total memory used                         :       17.0 MB
 Maximum total memory allocated                    :     3136.0 MB
 Total physical memory available                   :          8 GB
 
-Total amount of I/O written to disk               :        2.0 GB
-Total amount of I/O read from disk                :        2.0 GB
+Total amount of I/O written to disk               :        0.0 GB
+Total amount of I/O read from disk                :        0.0 GB
 
 +------ E N D   D I S T R I B U T E D   A N S Y S   S T A T I S T I C S -------+
 
@@ -965,11 +314,11 @@ Total amount of I/O read from disk                :        2.0 GB
  |---------------------------------------------------------------------------|
  |                                                                           |
  | Database Requested(-db)  1024 MB    Scratch Memory Requested      1024 MB |
- | Maximum Database Used      14 MB    Maximum Scratch Memory Used    113 MB |
+ | Maximum Database Used       9 MB    Maximum Scratch Memory Used      3 MB |
  |                                                                           |
  |---------------------------------------------------------------------------|
  |                                                                           |
- |        CP Time      (sec) =       1151.938       Time  =  22:37:23        |
- |        Elapsed Time (sec) =       1181.000       Date  =  11/23/2020      |
+ |        CP Time      (sec) =          0.969       Time  =  23:41:54        |
+ |        Elapsed Time (sec) =          4.000       Date  =  11/24/2020      |
  |                                                                           |
  *---------------------------------------------------------------------------*
