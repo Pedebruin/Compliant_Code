@@ -1,4 +1,4 @@
-function Plots = showme(theta_n,F,V,Fb,Objects,name)
+function Plots = showme(theta_n,chi_n,F,V,Objects,name)
 %{ 
 The function calculates the correct positions and angles based on a kinematic
 model. This model is then plotted in Figure 1: Analysis.  
@@ -20,22 +20,25 @@ In Objects array:
 %}
 [A,B,C,D,a,b,c,d,S] = Objects{:};               % Unpack the objects
 
-P1x = [-5 20]*10^(-2);                      % Axes for plot 1
+P1x = [-S.h*2,C.L*4];                      % Axes for plot 1
 P2x = [-abs(A.theta_min) abs(A.theta_max)]; % Axes for plot 2
 P3x = P2x+[1e-3 1e-3];                      % Axes for plot 3 (add small deviation to find it later)
 
 %% For saving V, theta and F in vectors V_v, theta_v and F_v. %%%%%%%%%%%%%
 persistent V_v;
 persistent theta_v;
+persistent chi_v;
 persistent F_v;
 
 % Create consistent variables and fill them
 if isempty(theta_v) && isempty(F_v) && isempty(V_v)
      theta_v = theta_n;
+     chi_v = chi_n;
      F_v = F;
      V_v = V;    
 else
     theta_v = [theta_v, theta_n];
+    chi_v  = [chi_v,chi_n];
     F_v = [F_v F];
     V_v = [V_v,V];    
 end
@@ -74,17 +77,20 @@ else % or find the figure again! (it is lost between function evaluations)
 end
 
 
-%% calculate phi (deflection angle of the beam) %%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Deflection as a function of theta
-[~,beta,~,w,phi] = kinModel(Objects);
+%% Evaluate kinematic model at current timestep %%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Get symbolic expressions
+[~,~,phi,cAng,bAng,aAng,w,At,Bt,Ctx,Cty,Ct,Dt] = kinModel(Objects);
 
-% Evaulate the angles from symbolic toolbox
 theta = theta_n;                % angle theta
-beta = eval(subs(beta));        % angle beta
+chi = chi_n;                    % angle chi
+
+% Evaulate the kinematic model!
+cAng = eval(subs(cAng));        % angle cAng
+bAng = eval(subs(bAng));        % angle bAng
+aAng = eval(subs(aAng));        % angle aAng
 phi = eval(subs(phi));          % angle phi
 w = eval(subs(w));              % vertical displacement beam
 
-    
 %% Plot Force in P3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 if size(F_v,2)>=2
     F_p = plot(P3,theta_v,F_v,'b');
@@ -92,12 +98,13 @@ else
     F_p = plot(P3,theta_v,F_v,'b+');
 end
 
-%% Plot the potential energy %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Plot the potential energy in P2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 if size(V_v,2)>=2
     V_p = plot(P2,theta_v,V_v,'k');  
 else                                                % single evaluation
     V_p = plot(P2,theta_v,V_v,'K+');
 end
+
 %% Plot the equilibriumpoints in P2 & P3
 if length(F_v) >= 2
     if sign(F_v(end))~=sign(F_v(end-1))
@@ -109,53 +116,35 @@ end
 
 
 %% Plot the mechanism %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Rtheta = [cos(theta) -sin(theta);       % Bottom corner
+Rtheta = [cos(theta) -sin(theta);       % deflection angle for joint d
          sin(theta) cos(theta)]; 
-Rthetam = [cos(-theta) -sin(-theta);       % Bottom corner
-         sin(-theta) cos(-theta)]; 
-Rphi = [cos(phi) -sin(phi);             % Deflection angle
+RaAng = [cos(aAng) -sin(aAng);          % deflection angle for joint a
+         sin(aAng) cos(aAng)]; 
+Rphi = [cos(phi) -sin(phi);             % deflection angle for beam C
         sin(phi) cos(phi)];
-Rbeta = [cos(-beta) sin(-beta);           % Top corner
-        -sin(-beta) cos(-beta)];
-Rphim = [cos(-phi) -sin(-phi);             % Deflection angle
-        sin(-phi) cos(-phi)];
+RcAng = [cos(cAng) -sin(cAng);          % deflection angle for joint c
+        sin(cAng) cos(cAng)];
+RbAng = [cos(bAng) -sin(bAng);          % deflection angle for joint b
+        sin(bAng) cos(bAng)];
         
 % Centers of rotation
 C.CoR = [C.alpha*C.L;
         S.L];
-
-c.CoR = C.CoR + Rphi*[(1-C.alpha)*C.L-c.h/2;
-                      C.h/2+c.L/2];
-b.CoR = c.CoR + Rbeta*Rphi * [0;
-                        c.L/2-B.L+b.L/2+2*B.t];    
-a.CoR = b.CoR+ Rphim*[0;
-            -D.L+c.L/2+b.L/2+2*D.t];  
-d.CoR = [C.L-a.h/2;
-            -S.h-a.L/2];
+c.CoR = C.CoR + Rphi*[Ctx;
+                      Cty];
+b.CoR = c.CoR + RcAng*[0;
+                       -Bt];    
+a.CoR = b.CoR+ RcAng*RbAng*[0;
+                      -Dt];  
+d.CoR = a.CoR+Rtheta*[0;
+                       -At];
      
 
 %% Plot values in text
-Fcr = min([a.Fcr,b.Fcr,c.Fcr]);
-if exist('Fcrmax')
-    Fcrmax = max(Fcrmax,Fcr);
-else
-    Fcrmax = Fcr;
-end
-
-y={strcat('$$F_b$$ = ',num2str(Fb,3),'N')
-strcat('$$F_{cr}$$ = ',num2str(Fcr,3),'N')
-strcat('$$F$$ = ',num2str(F,3),'N')};
+y={strcat('$$F$$ = ',num2str(F,3),'N')};
 str=sprintf('%s\n',y{:});
+txt = text(P1,-S.h,S.L+C.h+0.01,str);
 
-
-if Fb >= a.Fcr || Fb >= b.Fcr || Fb >= c.Fcr % If buckling is possible
-    txt = text(P1,-S.h,a.L+b.L+c.L+A.L+B.L+C.h+0.01,str,'Color','red');
-else
-    txt = text(P1,-S.h,a.L+b.L+c.L+A.L+B.L+C.h+0.01,str);
-end
-    
-    
- 
 %% Support
 XS = [-S.h -S.h 0 0 C.L C.L];
 YS = [-S.h S.L+C.h/2 S.L+C.h/2 0 0 -S.h];
@@ -163,28 +152,28 @@ S_p = patch(P1,XS,YS,'m');
 
 %% Joints
 % a   
-aBOT = a.CoR + Rphim*[-a.h/2 0 a.h/2; 
+aBOT = a.CoR + RaAng*Rtheta*[-a.h/2 0 a.h/2; 
                 -a.L/2 0 -a.L/2];
-aTOP = a.CoR + Rthetam*[-a.h/2 0 a.h/2;
+aTOP = a.CoR + Rtheta*[-a.h/2 0 a.h/2;
                         a.L/2 0 a.L/2];
 a_p = patch(P1,[aBOT(1,:)',aTOP(1,:)'],[aBOT(2,:)',aTOP(2,:)'],'y');
 
 % b
-bBOT = b.CoR + Rphi*Rbeta*[-b.h/2 0 b.h/2;
+bBOT = b.CoR + RcAng*[-b.h/2 0 b.h/2;
                 -b.L/2 0 -b.L/2];
-bTOP = b.CoR + Rphim*[0 b.h/2 -b.h/2;
+bTOP = b.CoR + RcAng*RbAng*[0 b.h/2 -b.h/2;   
                 0 b.L/2 b.L/2];
 b_p = patch(P1,[bBOT(1,:)',bTOP(1,:)'],[bBOT(2,:)',bTOP(2,:)'],'y');
 
 % c
-cTOP = c.CoR + Rphi*[0 c.h/2 -c.h/2;
-                     0 -c.L/2 -c.L/2];
-cBOT = c.CoR + Rphi*Rbeta*[0 -c.h/2 c.h/2;
+cTOP = c.CoR + RcAng*[0 -c.h/2 c.h/2;
                            0 c.L/2 c.L/2];
+cBOT = c.CoR + Rphi*[0 c.h/2 -c.h/2;
+                     0 -c.L/2 -c.L/2];
 c_p = patch(P1,[cTOP(1,:),cBOT(1,:)]',[cTOP(2,:),cBOT(2,:)]','y');
 
 % d
-dBOT = d.CoR + Rthetam*[-d.h/2 0 d.h/2;
+dBOT = d.CoR + Rtheta*[-d.h/2 0 d.h/2;
                        -d.L/2 0 -d.L/2];
 dTOP = d.CoR + [0 d.h/2 -d.h/2;
                       0 d.L/2 d.L/2];
@@ -192,9 +181,9 @@ d_p = patch(P1,[dBOT(1,:)',dTOP(1,:)'],[dBOT(2,:)',dTOP(2,:)'],'y');
 
 %% Links
 % A
-Apos = a.CoR + Rthetam*[A.s+A.h/2;
+Apos = a.CoR + Rtheta*[A.s+A.h/2;
                         -A.L/2+a.L/2+A.t];
-APOS = Apos + Rthetam*([-A.h/2 -A.s-A.h/2 -A.s-A.h/2 -A.h/2 A.h/2 0 A.h/2 A.h/2 A.w+A.h/2 A.w+A.h/2 -A.h/2 -A.s-A.h/2 -A.s-A.h/2 -A.h/2;
+APOS = Apos + Rtheta*([-A.h/2 -A.s-A.h/2 -A.s-A.h/2 -A.h/2 A.h/2 0 A.h/2 A.h/2 A.w+A.h/2 A.w+A.h/2 -A.h/2 -A.s-A.h/2 -A.s-A.h/2 -A.h/2;
                        -A.L/2+A.t -A.L/2+A.t -A.L/2 -A.L/2 -A.L/2 0 -A.L/4 A.L/4 A.L/4 A.L/2 A.L/2 A.L/2 A.L/2-A.t A.L/2-A.t] + ... 
                       [0 0 0 0 0 A.h/2+A.v*sin(A.delta) 0 0 0 0 0 0 0 0;
                      0 0 0 0 0 -A.L/2-A.v*cos(A.delta) 0 0 0 0 0 0 0 0]);    
@@ -202,25 +191,25 @@ A_p = patch(P1,APOS(1,:),APOS(2,:),'r');
 F = quiver(P1,APOS(1,6),APOS(2,6),0,F/150,'b');
 
 % B
-Bpos = c.CoR + Rphi*Rbeta*[B.s+B.h/2;
+Bpos = c.CoR + RcAng*[B.s+B.h/2;
                         -B.L/2+c.L/2+B.t];
-BPOS = Bpos + Rphi*Rbeta*[-B.h/2 -B.h/2-B.s -B.h/2-B.s -B.h/2 B.h/2 B.h/2 -B.h/2 -B.h/2-B.s -B.h/2-B.s -B.h/2;
+BPOS = Bpos + RcAng*[-B.h/2 -B.h/2-B.s -B.h/2-B.s -B.h/2 B.h/2 B.h/2 -B.h/2 -B.h/2-B.s -B.h/2-B.s -B.h/2;
                       -B.L/2+B.t -B.L/2+B.t -B.L/2 -B.L/2 -B.L/2 B.L/2 B.L/2 B.L/2 B.L/2-B.t B.L/2-B.t];
 B_p = patch(P1,BPOS(1,:),BPOS(2,:),'r');
 
 % C
 CLEFT = C.CoR + [-C.alpha*C.L 0 0 -C.alpha*C.L;
-                -C.h/2 0 0 C.h/2] +            Rphi*[0 0 0 0;
-                                               0 -C.h/2 C.h/2 0];
+                -C.h/2 0 0 C.h/2] + Rphi*[0 0 0 0;
+                                    0 -C.h/2 C.h/2 0];
 CLEFT = circshift(CLEFT,1,2);                                
 CRIGHT = C.CoR + Rphi*[0 (1-C.alpha)*C.L (1-C.alpha)*C.L 0;
                         -C.h/2 -C.h/2 C.h/2 C.h/2];
 C_p = patch(P1,[CLEFT(1,:) CRIGHT(1,:)]',[CLEFT(2,:) CRIGHT(2,:)]','g');
 
 % D
-Dpos = b.CoR + Rphim*[-D.s-D.h/2;
+Dpos = b.CoR + RcAng*RbAng*[-D.s-D.h/2;
                         -D.L/2+c.L/2+D.t];
-DPOS = Dpos + Rphim*[-D.h/2 D.h/2 D.h/2+D.s D.h/2+D.s D.h/2  D.h/2 D.h/2+D.s D.h/2+D.s -D.h/2;
+DPOS = Dpos + RcAng*RbAng*[-D.h/2 D.h/2 D.h/2+D.s D.h/2+D.s D.h/2  D.h/2 D.h/2+D.s D.h/2+D.s -D.h/2;
                         -D.L/2 -D.L/2 -D.L/2 -D.L/2+D.t -D.L/2+D.t D.L/2-D.t D.L/2-D.t D.L/2 D.L/2];
 D_p = patch(P1,DPOS(1,:),DPOS(2,:),'r');
 
