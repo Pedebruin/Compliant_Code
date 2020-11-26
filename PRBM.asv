@@ -13,9 +13,6 @@ equilibria = false;                 % The equilibria plots
 % make file the equations.txt file??
 file = false;
 
-% show design or PRBM model??
-visualisation = 'both';         %'PRBM' or 'Design' or 'both'
-
 % Debug mode
 debug = false;
 
@@ -124,7 +121,7 @@ end
 
 % If you would like to test:
 if debug == true
-    Plots = showme(0,0,0,0,Objects,1,false,'Test');
+    Plots = showme(0,0,0,0,Objects,1,'Test');
     disp('Press any continue to continue');
     pause;
     disp('Continuing...')
@@ -143,23 +140,23 @@ q = [theta,chi];
 dVdq = jacobian(V_deformation-Q_force,q);
 F_Lagrange = solve(dVdq(1),F);
 
-% X = linspace(A.theta_min, A.theta_max, 20);             % theta range
-% Y = linspace(A.theta_min/10, A.theta_max/10, 20);                           % chi range
-% Z = zeros(length(X),length(Y));
-% 
-% for i = 1:length(X)
-%     for j = 1:length(Y)
-%         theta = X(i);
-%         chi = Y(j);
-%         Z(i,j) = subs(aAng);
-%     end
-% end
-% 
-% surface(X,Y,Z);
-% xlabel('theta')
-% ylabel('chi')
-% zlabel('bAng');
-% grid on
+X = linspace(A.theta_min, A.theta_max, 20);             % theta range
+Y =linspace(-2e-3, 2e-3, 20);                           % chi range
+Z = ones(length(X),length(Y));
+
+for i = 1:length(X)
+    for j = 1:length(Y)
+        theta = X(i);
+        chi = Y(j);
+        Z(i,j) = subs(bAng);
+    end
+end
+
+surface(X,Y,Z);
+xlabel('theta')
+ylabel('chi')
+zlabel('bAng');
+grid on
 
 
 %% Main Loop for analysis
@@ -179,7 +176,7 @@ for theta = linspace(A.theta_min, A.theta_max, N)
     
     % Look for angle chi
     chifun = matlabFunction(subs(dVdq(2)));
-    chi_n = 0; %round(fzero(chifun,0));
+    chi_n = round(fzero(chifun,0))
        
     
     
@@ -208,7 +205,7 @@ for theta = linspace(A.theta_min, A.theta_max, N)
     end
     
     if simulation == true
-        Plots = showme(theta,chi_n,F,V,Objects,eqflag,visualisation,name);
+        Plots = showme(theta,chi_n,F,V,Objects,eqflag,name);
     else
         range = abs(A.theta_min)+abs(A.theta_max);
         progress = (theta+abs(A.theta_min))/range;
@@ -234,7 +231,7 @@ if equilibria == true
         F = eqs(i,3);
         V = eqs(i,4);
         name = ['Equilibrium ',num2str(i)];
-        Plots = showme(theta,chi,F,V,Objects,eqflag,visualisation,name);
+        Plots = showme(theta,chi,F,V,Objects,eqflag,name);
     end
 end
 

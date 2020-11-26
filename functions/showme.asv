@@ -1,4 +1,4 @@
-function Plots = showme(theta_n,chi_n,F,V,Objects,eqflag,visualisation,name)
+function Plots = showme(theta_n,chi_n,F,V,Objects,eqflag,Design,name)
 %{ 
 The function calculates the correct positions and angles based on a kinematic
 model. This model is then plotted in Figure 1: Analysis.  
@@ -148,21 +148,12 @@ XS = [-S.h -S.h 0 0 C.L C.L];
 YS = [-S.h S.L+C.h/2 S.L+C.h/2 0 0 -S.h];
 S_p = patch(P1,XS,YS,'m');
 
-if strcmp(visualisation,'PRBM')
-    prbm = true;
-    Design = false;
-elseif strcmp(visualisation,'Design')
-    prbm = false;
-    Design = true;
-elseif strcmp(visualisation,'both')
-    prbm = true;
-    Design = true;
-end
+
 
 
 
 %% PRBM model plot
-if prbm == true
+if Design == false
     cors = [C.CoR,c.CoR,b.CoR,a.CoR,d.CoR];
     Cors = plot(P1,cors(1,:),cors(2,:),'Oc');
     LA = plot(P1,[d.CoR(1) a.CoR(1)],[d.CoR(2) a.CoR(2)],'c');
@@ -171,16 +162,8 @@ if prbm == true
     LC = plot(P1,[C.CoR(1) c.CoR(1)],[C.CoR(2) c.CoR(2)],'c');
     LC2 = plot(P1,[0 C.CoR(1)],[S.L C.CoR(2)],'c');
     links = [LA, LB, LC, LD, LC2];
-    
-    if exist('Plots')
-        Plots = [Plots, F_p, V_p, Cors, links];
-    else
-        Plots = [F_p, V_p, Cors, links];
-    end
-    
-end
-
-if Design == true
+    Plots = [F_p, V_p, Cors, links];
+else
     %% Joints
     % a   
     aBOT = a.CoR + RaAng*Rtheta*[-a.h/2 0 a.h/2; 
@@ -243,13 +226,7 @@ if Design == true
     DPOS = Dpos + RcAng*RbAng*[-D.h/2 D.h/2 D.h/2+D.s D.h/2+D.s D.h/2  D.h/2 D.h/2+D.s D.h/2+D.s -D.h/2;
                             -D.L/2 -D.L/2 -D.L/2 -D.L/2+D.t -D.L/2+D.t D.L/2-D.t D.L/2-D.t D.L/2 D.L/2];
     D_p = patch(P1,DPOS(1,:),DPOS(2,:),'r');
-    if exist('Plots')
-        Plots = [ Plots, a_p, b_p, c_p, d_p, A_p, B_p, C_p, D_p, F, F_p, V_p, txt]; 
-    else 
-        Plots = [a_p, b_p, c_p, d_p, A_p, B_p, C_p, D_p, F, F_p, V_p, txt];
-    end
+
+    Plots = [a_p, b_p, c_p, d_p, A_p, B_p, C_p, D_p, F, F_p, V_p, txt]; 
 end
-
-    
-
 end
