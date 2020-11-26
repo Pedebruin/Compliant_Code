@@ -9,19 +9,15 @@ addpath('./functions');                                     % add function folde
 % Which plots do you want?
 simulation = true;                 % The simulation plot
 equilibria = false;                 % The equilibria plots
-
 % make file the equations.txt file??
 file = false;
-
 % show design or PRBM model??
-visualisation = 'both';         %'PRBM' or 'Design' or 'both'
-
+visualisation = 'Design';         %'PRBM' or 'Design' or 'both'
 % Debug mode
 debug = false;
-
 % Simulation
-A.theta_max = pi/12;
-A.theta_min = -pi/12;
+A.theta_min = deg2rad(-12);
+A.theta_max = deg2rad(12);
 N = 100;
    
 %% Parameters
@@ -140,25 +136,33 @@ V_deformation = 1/2*(a.k*aAng^2+b.k*bAng^2+c.k*cAng^2+d.k*theta^2+C.k*phi^2);
 Q_force = - F*(A.v)*sin(A.delta)*sin(theta);  % Potential energy as a function of theta (approx)
 
 q = [theta,chi];
-dVdq = jacobian(V_deformation-Q_force,q);
-F_Lagrange = solve(dVdq(1),F);
+dVdq = jacobian(V_deformation+Q_force,q);
+F_Lagrange = solve(dVdq(1)==0,F);
 
-% X = linspace(A.theta_min, A.theta_max, 20);             % theta range
-% Y = linspace(A.theta_min/10, A.theta_max/10, 20);                           % chi range
+% X = linspace(A.theta_min, A.theta_max, 50);             % theta range
+% Y = linspace(A.theta_min, A.theta_max, 50);                           % chi range
+% Force = linspace(-5,5,50);
 % Z = zeros(length(X),length(Y));
 % 
-% for i = 1:length(X)
+%         
+% for i = 1:length(Force)
 %     for j = 1:length(Y)
-%         theta = X(i);
+%         theta = 0.1;
 %         chi = Y(j);
-%         Z(i,j) = subs(aAng);
+%         F = Force(i);
+%         Z(j,i) = real(subs(V_deformation));
 %     end
 % end
 % 
-% surface(X,Y,Z);
-% xlabel('theta')
+% x0 = [0,0];
+% theta = 0.1;
+% 
+% %fun = matlabFunction(V_deformation);
+% chimin = fminunc(@(x)Vfunction(x,V_deformation,theta),x0);
+% surface(Force,rad2deg(Y),Z);
+% xlabel('F')
 % ylabel('chi')
-% zlabel('bAng');
+% zlabel('Potential Energy');
 % grid on
 
 
@@ -171,30 +175,33 @@ if simulation == false
     f = waitbar(0,'Simulating');
 end  
 
+% Optimisation settings
+x0 = [0,0]; % theta, F
+options = optimoptions('fminunc','Display','off');
+
 % Main loop
 for theta = linspace(A.theta_min, A.theta_max, N)
-    %% Under construction
-    %chi_n = 0;            % Just for now
-    F = 0; %eval(subs(F_lagrange_theta));                 % Calculate Force for equilibrium
     
-    % Look for angle chi
-    chifun = matlabFunction(subs(dVdq(2)));
-    chi_n = 0; %round(fzero(chifun,0));
-       
+    % For current angle theta, find chi for minimum of potential energy. 
+    [xopt,fval,exitflag] = fminunc(@(x)Vfunction(x,V_deformation,theta),x0,options);
+    chi_n = xopt(2);
+    V = fval;
     
-    
-    %%
+    if exitflag<=0
+        chi_n = 0;
+        warning('Optimisation might have failed! (go have a look)')
+    end
+        
+    F = eval(subs(F_Lagrange,'chi','chi_n'));
     eqflag= false;
-    
-    V = eval(subs(V_deformation,'chi','chi_n'));              % Calculate potential energy
-    dV = eval(subs(dVdq(1),'chi','chi_n'));                  % calculate derivative of potential energy
+
     if theta ~= A.theta_min
        if simulation == true
            delete(Plots);                           % Delete last plot
        end
               
        % look for equilibria (and save the values at these equilibria)
-        if sign(dV)~=sign(dV_1)                       % If dV changes sign!
+        if sign(F)~=sign(F_1)                       % If dV changes sign!
             eqflag = true;
             theta_eq = theta;
             chi_eq = chi_n;
@@ -215,7 +222,7 @@ for theta = linspace(A.theta_min, A.theta_max, N)
         waitbar(progress,f,sprintf('Simulating: theta = %4.4f [rad]',theta));
     end
     
-    dV_1 = dV;                                            % save last value of F
+    F_1 = F;                                            % save last value of F
     pause(0.001);
 end
 if simulation == false
