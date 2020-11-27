@@ -12,7 +12,7 @@ equilibria = true;                 % The equilibria plots
 % make file the equations.txt file??
 file = false;
 % show design or PRBM model??
-visualisation = 'PRBM';         %'PRBM' or 'Design' or 'both'
+visualisation = 'both';         %'PRBM' or 'Design' or 'both'
 % Debug mode
 debug = true;
 % Simulation
@@ -33,33 +33,33 @@ g = 3e-3;   % m
     a.E = Essteel;            % E modulus
     a.h = 0.1e-3;             % height [m]
     a.d = g;                % depth [m]
-    a.L = 3e-3;          % length [m]
+    a.L = 5e-3;          % length [m]
     
     % b
     b.name = 'b';
     b.E = Essteel;
     b.h = 0.1e-3;
     b.d = g;
-    b.L = 3e-3;
+    b.L = 5e-3;
     
     % c
     c.name = 'c';
     c.E = Essteel;
     c.h = 0.1e-3;
     c.d = g;
-    c.L = 3e-3;
+    c.L = 10e-3;
     
     % d
     d.name = 'd';
     d.E = Essteel;
     d.h = 0.1e-3;
     d.d = g;
-    d.L = 3e-3;
+    d.L = 10e-3;
     
 % Links
     % A
     A.name = 'A';
-    A.L = 50e-3; % m 
+    A.L = 35e-3; % m 
     A.h = 3e-3;  
     A.d = g;
     A.zeta = pi/9;
@@ -71,14 +71,14 @@ g = 3e-3;   % m
     
     % B
     B.name = 'B';
-    B.L = 20e-3; % m
+    B.L = 50e-3; % m
     B.h = 3e-3;
     B.s = B.h;
     B.t = B.h;
    
     % D
     D.name = 'D';
-    D.L = 20e-3; % m
+    D.L = 30e-3; % m
     D.h = 3e-3;
     D.s = D.h;
     D.t = D.h;
@@ -94,7 +94,7 @@ g = 3e-3;   % m
     
 % Support
     S.name = 'S';
-    S.h = 10e-3;
+    S.h = 7.5e-3;
     S.L = -a.L-b.L-c.L-d.L+A.L+B.L+D.L-2*D.t-2*B.t-2*A.t-C.h/2-S.h-C.wmax;  % S.L at theta=0 -C.wmax
     %% Stiffnesses
 a.I = a.d*a.h^3/12;
@@ -121,6 +121,7 @@ end
 % If you would like to test:
 if debug == true
     Plots = showme(0,0,0,0,Objects,false,visualisation,'Test');
+    return
     disp('Press any continue to continue');
     pause;
     disp('Continuing...')

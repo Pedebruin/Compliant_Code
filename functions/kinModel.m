@@ -10,12 +10,12 @@ syms chi
 [A,B,C,D,a,b,c,d,S] = Objects{:};               % Unpack the objects
 
 % Effective lengths (From CoR to CoR)
-At = A.L-a.L/2-b.L/2-2*A.t; % total length A
+At = A.L-a.L/2-d.L/2-2*A.t; % total length A
 Bt = B.L-b.L/2-c.L/2-2*B.t; % total length B
     Ctx = (1-C.alpha)*C.L;      % total length C (in x direction)
     Cty = (C.h/2+c.L/2);        % total length C (in y direction)
 Ct = sqrt(Ctx^2+Cty^2);
-Dt = D.L-d.L/2-a.L/2-2*D.t; % total length D
+Dt = D.L-b.L/2-a.L/2-2*D.t; % total length D
 
 % joint deflection angles
 dAng = theta;
