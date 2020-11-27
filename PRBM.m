@@ -8,16 +8,16 @@ addpath('./functions');                                     % add function folde
 %% settings
 % Which plots do you want?
 simulation = true;                 % The simulation plot
-equilibria = true;                 % The equilibria plots
+equilibria = false;                 % The equilibria plots
 % make file the equations.txt file??
 file = false;
 % show design or PRBM model??
 visualisation = 'both';         %'PRBM' or 'Design' or 'both'
 % Debug mode
-debug = true;
+debug = false;
 % Simulation
-A.theta_min = deg2rad(-12);
-A.theta_max = deg2rad(12);
+A.theta_min = deg2rad(-24);
+A.theta_max = deg2rad(24);
 N = 100;
    
 %% Parameters
@@ -27,20 +27,21 @@ Epmma = 3E9;
 Essteel = 200E9;
 g = 3e-3;   % m
 
+
 % Joints
     % a
     a.name = 'a';
     a.E = Essteel;            % E modulus
     a.h = 0.1e-3;             % height [m]
     a.d = g;                % depth [m]
-    a.L = 5e-3;          % length [m]
+    a.L = 10e-3;          % length [m]
     
     % b
     b.name = 'b';
     b.E = Essteel;
-    b.h = 0.1e-3;
+    b.h = 0.4e-3;
     b.d = g;
-    b.L = 5e-3;
+    b.L = 10e-3;
     
     % c
     c.name = 'c';
@@ -59,42 +60,42 @@ g = 3e-3;   % m
 % Links
     % A
     A.name = 'A';
-    A.L = 35e-3; % m 
-    A.h = 3e-3;  
+    A.L = 60e-3; % m 
+    A.h = 5e-3;  
     A.d = g;
     A.zeta = pi/9;
     A.delta = pi/4;     % Angle string finger
     A.w = 2e-2;         % Length switch
     A.v = A.w*6/4;      % Length string finger
-    A.s = A.h;
+    A.s = 1.5*A.h;
     A.t = A.h;
     
     % B
     B.name = 'B';
-    B.L = 50e-3; % m
+    B.L = 40e-3; % m
     B.h = 3e-3;
     B.s = B.h;
     B.t = B.h;
    
     % D
     D.name = 'D';
-    D.L = 30e-3; % m
+    D.L = 45e-3; % m
     D.h = 3e-3;
-    D.s = D.h;
+    D.s = 1.5*D.h;
     D.t = D.h;
    
 % Beam
     C.name = 'C';
-    C.E = Essteel;
-    C.h = 0.4e-3;
+    C.E = Epmma;
+    C.h = 6.2e-3;
     C.d = g;
-    C.L = 16e-3;
-    C.wmax = 3e-3;        % maximum deflection
+    C.L = 50e-3;
+    C.wmax = 5e-3;        % maximum deflection
     C.alpha = 1/4;
     
 % Support
     S.name = 'S';
-    S.h = 7.5e-3;
+    S.h = 15e-3;
     S.L = -a.L-b.L-c.L-d.L+A.L+B.L+D.L-2*D.t-2*B.t-2*A.t-C.h/2-S.h-C.wmax;  % S.L at theta=0 -C.wmax
     %% Stiffnesses
 a.I = a.d*a.h^3/12;
@@ -122,7 +123,7 @@ end
 if debug == true
     Plots = showme(0,0,0,0,Objects,false,visualisation,'Test');
     return
-    disp('Press any continue to continue');
+    disp('Press any key to continue');
     pause;
     disp('Continuing...')
     clear showme
@@ -222,7 +223,7 @@ for theta = linspace(A.theta_min, A.theta_max, N)
     end
     
     F_1 = F;                                            % save last value of F
-    pause(0.001);
+    pause(0.000001);
 end
 if simulation == false
     close(f);
