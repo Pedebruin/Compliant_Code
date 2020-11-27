@@ -30,5 +30,3 @@ w = Lcurr-S.L;                                                          % Deflec
 % to deflection angle
 phi = asin(w/Ct);
 end
-
-%S.L = -a.L-b.L-c.L-d.L+A.L+B.L+D.L-S.h-2*D.t-2*B.t-2*A.t-C.h/2-C.wmax;

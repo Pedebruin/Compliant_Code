@@ -173,9 +173,9 @@ if prbm == true
     links = [LA, LB, LC, LD, LC2];
     
     if exist('Plots')
-        Plots = [Plots, F_p, V_p, Cors, links];
+        Plots = [Plots, F_p, V_p, Cors, links, txt];
     else
-        Plots = [F_p, V_p, Cors, links];
+        Plots = [F_p, V_p, Cors, links, txt];
     end
     
 end

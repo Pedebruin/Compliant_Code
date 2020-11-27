@@ -120,7 +120,7 @@ end
 
 % If you would like to test:
 if debug == true
-    Plots = showme(0,0,0,0,Objects,false,visualisation,'Test');
+    Plots = showme(0,0,0,0,Objects,1,false,visualisation,'Test');
     disp('Press any continue to continue');
     pause;
     disp('Continuing...')
