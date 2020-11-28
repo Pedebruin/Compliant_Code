@@ -2,10 +2,10 @@
 <Storage>
   <Project Version="9.1">
     <base-designpoint-name valType="String">0</base-designpoint-name>
-    <timestamp-max valType="Int64">78300</timestamp-max>
+    <timestamp-max valType="Int64">78861</timestamp-max>
     <framework-build-version valType="String">19.5.112.0</framework-build-version>
     <external-version-string valType="String">2019 R3</external-version-string>
-    <last-saved-utc valType="String">11/24/2020 22:43:15</last-saved-utc>
+    <last-saved-utc valType="String">11/28/2020 17:39:45</last-saved-utc>
     <managed-categories valType="String">[report, misc, progress]</managed-categories>
     <logHistory valType="StringArray">
       <ArrayEntry Index="0">Pim Ebbel de Bruin@PIM-LAPTOP:C:\Users\pedeb\AppData\Local\Temp\WorkbenchLogs\CoreEvents10716.log</ArrayEntry>
@@ -25,6 +25,7 @@
       <ArrayEntry Index="14">Daniel@DANIEL-PC:C:\Users\Daniel\AppData\Local\Temp\WorkbenchLogs\CoreEvents13320.log</ArrayEntry>
       <ArrayEntry Index="15">Pim Ebbel de Bruin@PIM-LAPTOP:C:\Users\pedeb\AppData\Local\Temp\WorkbenchLogs\CoreEvents14252.log</ArrayEntry>
       <ArrayEntry Index="16">Pim Ebbel de Bruin@PIM-LAPTOP:C:\Users\pedeb\AppData\Local\Temp\WorkbenchLogs\CoreEvents21788.log</ArrayEntry>
+      <ArrayEntry Index="17">Daniel@DANIEL-PC:C:\Users\Daniel\AppData\Local\Temp\WorkbenchLogs\CoreEvents26612.log</ArrayEntry>
     </logHistory>
     <expression-scope-container valType="String">Parameters</expression-scope-container>
     <project-type valType="String">WB2</project-type>
@@ -69,8 +70,8 @@
 "e8c0ac19-1b36-4417-928b-696cec6f80fd": "/Schematic/ComponentTemplate:DXOptimizationCellTemplate_GDO",
 "5c2bd25e-288c-4d83-bee3-ddf245d58389": "/FileTypesContainer/FileType:default",
 "824f1876-65bd-47b2-9c9d-806b0b769b58": "/FileTypesContainer/FileType:ACTDatabase",
-"c04289cc-4295-405b-83af-a5b2244e12b3": "/FileContainer/FileReference:F12",
-"51149ab6-9104-4da1-874e-f4d23db607af": "/FileContainer/FileReference:F13"
+"51149ab6-9104-4da1-874e-f4d23db607af": "/FileContainer/FileReference:F13",
+"309419b8-e61d-47de-b408-3514792ca56f": "/FileContainer/FileReference:F14"
 }</ReferenceList>
       </ProjectReferenceList>
       <DesignPointReferenceListCollection>
@@ -366,13 +367,13 @@
       <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">0</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 76904, "Input": 1390, "Output": 1390}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 78791, "Input": 1390, "Output": 1390}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <contains-significant-data valType="Boolean">false</contains-significant-data>
-      <Object Name="/FileContainer/FileReference:F12" Version="1.0">
+      <Object Name="/FileContainer/FileReference:F14" Version="1.0">
         <class-type valType="String">FileReference</class-type>
-        <object-name valType="String">F12</object-name>
-        <member-data valType="String">{"DisplayText": "v2.SLDPRT", "FileType": $$d58ae38e-31f2-4cfd-aaf0-992b40156df1, "DependentFiles": [], "ContainerAssociations": ["Geometry"], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\user_files\v2.SLDPRT", "ReferenceCount": 1}</member-data>
+        <object-name valType="String">F14</object-name>
+        <member-data valType="String">{"DisplayText": "Assembly_v2.SLDASM", "FileType": $$d58ae38e-31f2-4cfd-aaf0-992b40156df1, "DependentFiles": [], "ContainerAssociations": ["Geometry"], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\user_files\Assembly_v2.SLDASM", "ReferenceCount": 1}</member-data>
       </Object>
       <Object Name="/FileContainer/FileReference:F2" Version="1.0">
         <class-type valType="String">FileReference</class-type>
@@ -402,7 +403,7 @@
       <Object Name="/FileContainer/FileReference:F11" Version="1.0">
         <class-type valType="String">FileReference</class-type>
         <object-name valType="String">F11</object-name>
-        <member-data valType="String">{"DisplayText": "act.dat", "FileType": $$824f1876-65bd-47b2-9c9d-806b0b769b58, "DependentFiles": [], "ContainerAssociations": [], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp0\act.dat", "ReferenceCount": 5}</member-data>
+        <member-data valType="String">{"DisplayText": "act.dat", "FileType": $$824f1876-65bd-47b2-9c9d-806b0b769b58, "DependentFiles": [], "ContainerAssociations": [], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp0\act.dat", "ReferenceCount": 6}</member-data>
       </Object>
     </Container>
     <Container Name="Messages" Version="1.0">
@@ -4644,13 +4645,13 @@ Licensing path:
       <maxUpdateOrder valType="Double">1</maxUpdateOrder>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">0</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 78298, "Input": 78299, "Output": 1394}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 78298, "Input": 78799, "Output": 1394}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <contains-significant-data valType="Boolean">true</contains-significant-data>
       <Object Name="/Parameters/DesignPoint:0" Version="1.0">
         <class-type valType="String">DesignPoint</class-type>
         <object-name valType="String">0</object-name>
-        <member-data valType="String">{"DisplayText": "DP 0", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": [], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Model in SYS", "DidCompleteUpdate": "True"}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {}, "ParameterStatus": {}, "Note": None, "IsUpToDate": True, "Exported": True, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": True, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 1}</member-data>
+        <member-data valType="String">{"DisplayText": "DP 0", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": [], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Model in SYS", "DidCompleteUpdate": "True"}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {}, "ParameterStatus": {}, "Note": None, "IsUpToDate": False, "Exported": True, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": True, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 1}</member-data>
         <properties-setByUserFlag-data valType="String">["IsDataModelValid", "Retained", "Exported", "UpdateOrder", "DisplayText"]</properties-setByUserFlag-data>
       </Object>
       <Object Name="/Parameters/DesignPointReportSetting:Design Points Report Setting" Version="1.0">
@@ -4666,7 +4667,7 @@ Licensing path:
       <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">0</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 78300, "Input": 75800, "Output": 1397}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 78802, "Input": 78302, "Output": 1397}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <contains-significant-data valType="Boolean">true</contains-significant-data>
       <Object Name="/Schematic/System:Geometry" Version="1.0">
@@ -4772,7 +4773,7 @@ Licensing path:
       <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">0</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 78223, "Input": 1680, "Output": 1680}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 78786, "Input": 1680, "Output": 1680}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <contains-significant-data valType="Boolean">false</contains-significant-data>
     </Container>
