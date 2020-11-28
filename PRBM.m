@@ -10,9 +10,9 @@ addpath('./functions');                                     % add function folde
 simulation = true;                 % The simulation plot
 equilibria = false;                 % The equilibria plots
 % make file the equations.txt file??
-file = false;
+file = true;
 % show design or PRBM model??
-visualisation = 'both';         %'PRBM' or 'Design' or 'both'
+visualisation = 'Design';         %'PRBM' or 'Design' or 'both'
 % Debug mode
 debug = false;
 % Simulation
@@ -73,15 +73,15 @@ g = 3e-3;   % m
     % B
     B.name = 'B';
     B.L = 40e-3; % m
-    B.h = 3e-3;
-    B.s = B.h;
+    B.h = 4e-3;
+    B.s = 2*B.h;
     B.t = B.h;
    
     % D
     D.name = 'D';
     D.L = 45e-3; % m
-    D.h = 3e-3;
-    D.s = 1.5*D.h;
+    D.h = 4e-3;
+    D.s = 2.5*D.h;
     D.t = D.h;
    
 % Beam
