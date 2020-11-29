@@ -244,7 +244,6 @@ if Design == true
     DPOS = Dpos + RcAng*RbAng*[-D.h/2 D.h/2 D.h/2+D.s D.h/2+D.s D.h/2  D.h/2 D.h/2+D.s D.h/2+D.s -D.h/2;
                                -D.L/2 -D.L/2 -D.L/2 -D.L/2+D.t -D.L/2+D.t D.L/2-D.t D.L/2-D.t D.L/2 D.L/2];
     D_p = patch(P1,DPOS(1,:),DPOS(2,:),'r');
-    plot(P1,Dpos(1),Dpos(2),'o');
     if exist('Plots')
         Plots = [ Plots, a_p, b_p, c_p, d_p, A_p, B_p, C_p, D_p, F, F_p, V_p, txt]; 
     else 

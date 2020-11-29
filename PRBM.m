@@ -8,7 +8,7 @@ addpath('./functions');                                     % add function folde
 %% settings
 % Which plots do you want?
 simulation = true;                 % The simulation plot
-equilibria = false;                 % The equilibria plots
+equilibria = true;                 % The equilibria plots
 % make file the equations.txt file??
 file = true;
 % show design or PRBM model??
@@ -32,16 +32,16 @@ g = 3e-3;   % m
     % a
     a.name = 'a';
     a.E = Essteel;            % E modulus
-    a.h = 0.1e-3;             % height [m]
+    a.h = 0.2e-3;             % height [m]
     a.d = g;                % depth [m]
-    a.L = 10e-3;          % length [m]
+    a.L = 8e-3;          % length [m]
     
     % b
     b.name = 'b';
     b.E = Essteel;
     b.h = 0.4e-3;
     b.d = g;
-    b.L = 10e-3;
+    b.L = 7e-3;
     
     % c
     c.name = 'c';
@@ -60,34 +60,34 @@ g = 3e-3;   % m
 % Links
     % A
     A.name = 'A';
-    A.L = 60e-3; % m 
-    A.h = 5e-3;  
+    A.L = 70e-3; % m 
+    A.h = 7e-3;  
     A.d = g;
     A.zeta = pi/9;
     A.delta = pi/4;     % Angle string finger
     A.w = 2e-2;         % Length switch
     A.v = A.w*6/4;      % Length string finger
-    A.s = 1.5*A.h;
+    A.s = 2*A.h;
     A.t = A.h;
     
     % B
     B.name = 'B';
-    B.L = 40e-3; % m
-    B.h = 4e-3;
+    B.L = 65e-3; % m
+    B.h = 8e-3;
     B.s = 2*B.h;
     B.t = B.h;
    
     % D
     D.name = 'D';
-    D.L = 45e-3; % m
-    D.h = 4e-3;
-    D.s = 2.5*D.h;
+    D.L = 60e-3; % m
+    D.h = 8e-3;
+    D.s = 1.5*D.h;
     D.t = D.h;
    
 % Beam
     C.name = 'C';
     C.E = Epmma;
-    C.h = 6.2e-3;
+    C.h = 6.5e-3;
     C.d = g;
     C.L = 50e-3;
     C.wmax = 5e-3;        % maximum deflection
