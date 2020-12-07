@@ -14,7 +14,7 @@ file = true;
 % show design or PRBM model??
 visualisation = 'Design';         %'PRBM' or 'Design' or 'both'
 % Debug mode
-debug = false;
+debug = true;
 % Simulation
 A.theta_min = deg2rad(-24);
 A.theta_max = deg2rad(24);
