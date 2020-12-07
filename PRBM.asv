@@ -14,7 +14,7 @@ file = true;
 % show design or PRBM model??
 visualisation = 'Design';         %'PRBM' or 'Design' or 'both'
 % Debug mode
-debug = true;
+debug = false;
 % Simulation
 A.theta_min = deg2rad(-24);
 A.theta_max = deg2rad(24);
@@ -65,10 +65,11 @@ g = 3e-3;   % m
     A.d = g;
     A.zeta = pi/9;
     A.delta = pi/4;     % Angle string finger
-    A.w = 2e-2;         % Length switch
-    A.v = A.w*6/4;      % Length string finger
+    A.w = 0;         % Length switch
+    A.v = 2e-2*6/4;      % Length string finger
     A.s = 2*A.h;
     A.t = A.h;
+    A.ActualForceLocation = 38.95e-3;
     
     % B
     B.name = 'B';
@@ -136,37 +137,11 @@ syms F
 % The potential energy!
 V_deformation = 1/2*(a.k*aAng^2+b.k*bAng^2+c.k*cAng^2+d.k*theta^2+C.k*phi^2);
 Q_force = - F*((A.v)*sin(A.delta)+A.h+A.s)*sin(theta);  % Potential energy as a function of theta (approx)
+% Q_force = - F*(A.ActualForceLocation)*sin(theta);  % Potential energy as a function of theta (approx)
 
 q = [theta,chi];
 dVdq = jacobian(V_deformation+Q_force,q);
 F_Lagrange = solve(dVdq(1)==0,F);
-
-% X = linspace(A.theta_min, A.theta_max, 50);             % theta range
-% Y = linspace(A.theta_min, A.theta_max, 50);                           % chi range
-% Force = linspace(-5,5,50);
-% Z = zeros(length(X),length(Y));
-% 
-%         
-% for i = 1:length(Force)
-%     for j = 1:length(Y)
-%         theta = 0.1;
-%         chi = Y(j);
-%         F = Force(i);
-%         Z(j,i) = real(subs(V_deformation));
-%     end
-% end
-% 
-% x0 = [0,0];
-% theta = 0.1;
-% 
-% fun = matlabFunction(V_deformation);
-% chimin = fminunc(@(x)Vfunction(x,V_deformation,theta),x0);
-% surface(Force,rad2deg(Y),Z);
-% xlabel('F')
-% ylabel('chi')
-% zlabel('Potential Energy');
-% grid on
-
 
 %% Main Loop for analysis
 eqs = [];
