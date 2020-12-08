@@ -25,14 +25,14 @@ N = 100;
 Epla = 2.5E9;  % pa
 Epmma = 3E9;
 Essteel = 200E9;
-g = 3e-3;   % m
+g = 5e-3;   % m
 
 
 % Joints
     % a
     a.name = 'a';
     a.E = Essteel;            % E modulus
-    a.h = 0.2e-3;             % height [m]
+    a.h = 0.1e-3;             % height [m]
     a.d = g;                % depth [m]
     a.L = 8e-3;          % length [m]
     
@@ -66,7 +66,7 @@ g = 3e-3;   % m
     A.zeta = pi/9;
     A.delta = pi/4;     % Angle string finger
     A.w = 0;         % Length switch
-    A.v = 2e-2*6/4;      % Length string finger
+    A.v = 1e-2*1.3;      % Length string finger
     A.s = 2*A.h;
     A.t = A.h;
     A.ActualForceLocation = 38.95e-3;
@@ -91,7 +91,7 @@ g = 3e-3;   % m
     C.h = 6.5e-3;
     C.d = g;
     C.L = 50e-3;
-    C.wmax = 5e-3;        % maximum deflection
+    C.wmax = 3e-3;        % maximum deflection
     C.alpha = 1/4;
     
 % Support
