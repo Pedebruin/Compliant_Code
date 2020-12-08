@@ -8,9 +8,9 @@ addpath('./functions');                                     % add function folde
 %% settings
 % Which plots do you want?
 simulation = true;                 % The simulation plot
-equilibria = true;                 % The equilibria plots
+equilibria = false;                 % The equilibria plots
 % make file the equations.txt file??
-file = true;
+file = false;
 % show design or PRBM model??
 visualisation = 'Design';         %'PRBM' or 'Design' or 'both'
 % Debug mode
@@ -154,8 +154,8 @@ if simulation == false
 end  
 
 % Optimisation settings
-x0 = 0; % theta, F
-options = optimoptions('fminunc','Display','off');
+x0 = 0; % theta
+options = optimoptions('fminunc','Display','off');  % Turn off displayed information
 
 % Main loop
 for theta = linspace(A.theta_min, A.theta_max, N)
@@ -222,20 +222,5 @@ if equilibria == true
     end
 end
 
-%{
-%% Single point plotting for a specific force. 
-F = 1;                                                      % Force i would like to see
-N = 20;                                                     % Number of seeds between min and max
-
-errFunc = matlabFunction(F_lagrange_theta-F);
-zeros = [];
-for thetaInit = linspace(A.theta_min, A.theta_max, N)
-    theta = round(fzero(errFunc,thetaInit),4);
-    
-    if sum(ismember(zeros, theta))==0
-        zeros = [zeros,theta];
-    end 
-end
-%}
 
 
