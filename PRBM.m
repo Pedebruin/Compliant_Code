@@ -8,9 +8,9 @@ addpath('./functions');                                     % add function folde
 %% settings
 % Which plots do you want?
 simulation = true;                 % The simulation plot
-equilibria = false;                 % The equilibria plots
+equilibria = true;                 % The equilibria plots
 % make file the equations.txt file??
-file = false;
+file = true;
 % show design or PRBM model??
 visualisation = 'Design';         %'PRBM' or 'Design' or 'both'
 % Debug mode
