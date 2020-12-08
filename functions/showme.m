@@ -125,7 +125,6 @@ if eqflag == true
 end
 
 
-
 %% Plot the mechanism %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Rtheta = [cos(theta) -sin(theta);       % deflection angle for joint d
          sin(theta) cos(theta)]; 
@@ -151,9 +150,11 @@ d.CoR = a.CoR+Rtheta*[0;
                        -At];
 
 %% Plot values in text
-y={strcat('$$F$$ = ',num2str(F,3),'N')};
+Fmax = max(abs(F_v));
+y={strcat('$$F$$ = ',num2str(F,3),' N');
+    strcat('$$F_{max}$$ = ',num2str(Fmax,3),' N')};
 str=sprintf('%s\n',y{:});
-txt = text(P1,-S.h,S.L+C.h+0.01,str);
+txt = text(P1,-S.h,S.L+C.h+0.02,str);
 
 %% Support
 XS = [-S.h -S.h 0 0 C.L C.L];
