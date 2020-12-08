@@ -69,14 +69,14 @@ if isempty(findobj('type','figure','name',name)) % create it
         hold on
         grid on
         title 'P. Energy V'
-        xlabel 'Displacement finger [mm]'
+        xlabel 'Displacement finger [m]'
         ylabel 'Potential energy [J]'
         xlim(P2x)
     P3 = subplot(2,3,6);
         hold on
         grid on
         title 'String force F'
-        xlabel 'Displacement finger [mm]'
+        xlabel 'Displacement finger [m]'
         ylabel 'Force [N]'
         xlim(P3x)
 else % or find the figure again! (it is lost between function evaluations)
