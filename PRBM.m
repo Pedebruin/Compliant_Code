@@ -12,7 +12,7 @@ equilibria = true;                 % The equilibria plots
 % make file the equations.txt file??
 file = true;
 % show design or PRBM model??
-visualisation = 'Design';         %'PRBM' or 'Design' or 'both'
+visualisation = 'PRBM';         %'PRBM' or 'Design' or 'both'
 % Debug mode
 debug = false;
 % Simulation
