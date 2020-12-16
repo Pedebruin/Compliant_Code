@@ -12,13 +12,13 @@ equilibria = true;                 % The equilibria plots
 % make file the equations.txt file??
 file = true;
 % show design or PRBM model??
-visualisation = 'Design';         %'PRBM' or 'Design' or 'both'
+visualisation = 'PRBM';         %'PRBM' or 'Design' or 'both'
 % Debug mode
 debug = false;
 % Simulation
 A.theta_min = deg2rad(-24);
 A.theta_max = deg2rad(24);
-N = 100;
+N = 500;
    
 %% Parameters
 % Material
@@ -41,7 +41,7 @@ g = 5e-3;   % m
     b.E = Essteel;
     b.h = 0.4e-3;
     b.d = g;
-    b.L = 7e-3;
+    b.L = 8e-3;
     
     % c
     c.name = 'c';
