@@ -8,17 +8,17 @@ addpath('./functions');                                     % add function folde
 %% settings
 % Which plots do you want?
 simulation = true;                 % The simulation plot
-equilibria = true;                 % The equilibria plots
+equilibria = false;                 % The equilibria plots
 % make file the equations.txt file??
-file = true;
+file = false;
 % show design or PRBM model??
 visualisation = 'PRBM';         %'PRBM' or 'Design' or 'both'
 % Debug mode
-debug = false;
+debug = true;
 % Simulation
 A.theta_min = deg2rad(-24);
 A.theta_max = deg2rad(24);
-N = 500;
+N = 100;
    
 %% Parameters
 % Material

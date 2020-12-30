@@ -29,5 +29,5 @@ w = Lcurr-S.L;                                                          % Deflec
 
 % to deflection angle
 phi = asin(w/Ct);
-cAng = cAng + phi; % Small error, this is a dirty but quick fix.
+% cAng = cAng + phi; % Small error, this is a dirty but quick fix.
 end
