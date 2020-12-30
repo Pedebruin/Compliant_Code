@@ -1,34 +1,40 @@
 function Plots = showme(theta_n,chi_n,F,V,Objects,eqflag,visualisation,name)
 %{ 
 The function calculates the correct positions and angles based on a kinematic
-model. This model is then plotted in Figure 1: Analysis.  
-It takes as inputs:
+model. This model is then plotted in a figure named 'name'.  
+Inputs:
+    theta_n:        current angle theta
+    chi_n:          current angle chi
+    F:              current string force F
+    V:              current potential energy
+    Objects:
+            a:      Object for joint a
+            b:      Object for joint b
+            c:      Object for joint c
+            d:      Object for joint d
+            A:      Object for link A
+            B:      Object for link B
+            C:      Object for beam C
+            D:      Object for beam D
+            S:      Object for support S
+    eqflag:         Flag if current point is equilibrium
+    Visualisation:  Setting for what to plot in P1
+    name:           Name of the figure 
 
-Theta: The current angle
-F: The current force
-V: The current potential energy
-In Objects array:
-    a: Object for joint a
-    b: Object for joint b
-    c: Object for joint c
-    d: Object for joint d
-    A: Object for link A
-    B: Object for link B
-    C: Object for beam C
-    D: Object for beam D
-    S: Object for support S
+Outputs:
+    Plots:          Graphics objects for all plots generated
 %}
-[A,B,C,D,a,b,c,d,S] = Objects{:};               % Unpack the objects
 
-MaxDisp = abs(((A.v)*sin(A.delta)+A.h+A.s)*sin(A.theta_max));
+% Preliminaries
+[A,B,C,D,a,b,c,d,S] = Objects{:};                               % Unpack the objects
 
+MaxDisp = abs(((A.v)*sin(A.delta)+A.h+A.s)*sin(A.theta_max));   % convert from max theta to max displacement
+Disp = ((A.v)*sin(A.delta)+A.h+A.s)*sin(theta_n);               % convert from current theta to current displacement
 
-P1x = [-S.h*2,C.L*4];                      % Axes for plot 1
-P2x = [-MaxDisp MaxDisp]; % Axes for plot 2
-P3x = P2x+[1e-3 1e-3];                      % Axes for plot 3 (add small deviation to find it later)
+P1x = [-S.h*2,C.L*4];                                           % Axes for plot 1
+P2x = [-MaxDisp MaxDisp];                                       % Axes for plot 2
+P3x = P2x+[1e-3 1e-3];                                          % Axes for plot 3 (add small deviation to find it later)
 
-% Calculate displacement of force at angle theta
-Disp = ((A.v)*sin(A.delta)+A.h+A.s)*sin(theta_n);
 
 %% For saving V, theta and F in vectors V_v, theta_v and F_v. %%%%%%%%%%%%%
 persistent V_v;
@@ -38,13 +44,13 @@ persistent F_v;
 persistent Disp_v;
 
 % Create consistent variables and fill them
-if isempty(theta_v) && isempty(F_v) && isempty(V_v) && isempty(Disp_v)
+if isempty(theta_v) && isempty(F_v) && isempty(V_v) && isempty(Disp_v)      % do they already exist?
      theta_v = theta_n;
      chi_v = chi_n;
      F_v = F;
      V_v = V; 
      Disp_v = Disp;
-else
+else        
     theta_v = [theta_v, theta_n];
     chi_v  = [chi_v,chi_n];
     F_v = [F_v F];
@@ -54,10 +60,10 @@ end
 
 
 %% Create the plot (if it does not already exist)%%%%%%%%%%%%%%%%%%%%%%%%%%
-if isempty(findobj('type','figure','name',name)) % create it
+if isempty(findobj('type','figure','name',name))                            % Does it already exist?
     P = figure('Name',name);
     sgtitle(name)
-    P1 = subplot(2,3,[1 2 4 5]);
+    P1 = subplot(2,3,[1 2 4 5]);                                            % Mechanism plot
         hold on
         xlabel 'x position [m]'
         ylabel 'y position [m]'
@@ -65,14 +71,14 @@ if isempty(findobj('type','figure','name',name)) % create it
         grid on
         axis equal
         xlim(P1x)
-    P2 = subplot(2,3,3);
+    P2 = subplot(2,3,3);                                                    % potential energy
         hold on
         grid on
         title 'P. Energy V'
         xlabel 'Displacement finger [m]'
         ylabel 'Potential energy [J]'
         xlim(P2x)
-    P3 = subplot(2,3,6);
+    P3 = subplot(2,3,6);                                                    % string force
         hold on
         grid on
         title 'String force F'
@@ -88,11 +94,11 @@ end
 
 
 %% Evaluate kinematic model at current timestep %%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Get symbolic expressions
-[~,~,phi,cAng,bAng,aAng,w,At,Bt,Ctx,Cty,Ct,Dt] = kinModel(Objects);
+% Get symbolic expressions for the kinematic model
+[~,~,phi,cAng,bAng,aAng,w,At,Bt,Ctx,Cty,~,Dt] = kinModel(Objects);
 
-theta = theta_n;                % angle theta
-chi = chi_n;                    % angle chi
+theta = theta_n;                % current angle theta
+chi = chi_n;                    % current angle chi
 
 % Evaulate the kinematic model!
 cAng = eval(subs(cAng));        % angle cAng
@@ -125,7 +131,7 @@ if eqflag == true
 end
 
 
-%% Plot the mechanism %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Plot the mechanism in P1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Rtheta = [cos(theta) -sin(theta);       % deflection angle for joint d
          sin(theta) cos(theta)]; 
 RaAng = [cos(aAng) -sin(aAng);          % deflection angle for joint a
@@ -137,7 +143,7 @@ RcAng = [cos(cAng) -sin(cAng);          % deflection angle for joint c
 RbAng = [cos(bAng) -sin(bAng);          % deflection angle for joint b
         sin(bAng) cos(bAng)];
         
-% Centers of rotation
+% Centers of rotation of the joints
 C.CoR = [C.alpha*C.L;
         S.L];
 c.CoR = C.CoR + Rphi*[Ctx;
@@ -161,20 +167,19 @@ XS = [-S.h -S.h 0 0 C.L C.L];
 YS = [-S.h S.L+C.h/2 S.L+C.h/2 0 0 -S.h];
 S_p = patch(P1,XS,YS,'m');
 
-if strcmp(visualisation,'PRBM')
+% Plot the selected visualisation
+if strcmp(visualisation,'PRBM')             % Just the PRBM model
     prbm = true;
     Design = false;
-elseif strcmp(visualisation,'Design')
+elseif strcmp(visualisation,'Design')       % The design patched in 
     prbm = false;
     Design = true;
-elseif strcmp(visualisation,'both')
+elseif strcmp(visualisation,'both')         % Both
     prbm = true;
     Design = true;
 end
 
-
-
-%% PRBM model plot
+% PRBM model plot
 if prbm == true
     cors = [C.CoR,c.CoR,b.CoR,a.CoR,d.CoR];
     Cors = plot(P1,cors(1,:),cors(2,:),'Oc');
@@ -192,6 +197,7 @@ if prbm == true
     end
 end
 
+% Design model plot
 if Design == true
     %% Joints
     % a   
@@ -262,7 +268,4 @@ if Design == true
         Plots = [a_p, b_p, c_p, d_p, A_p, B_p, C_p, D_p, F, F_p, V_p, txt];
     end
 end
-
-    
-
 end

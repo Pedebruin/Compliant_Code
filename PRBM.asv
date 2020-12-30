@@ -1,3 +1,8 @@
+clear all
+close all
+set(groot, 'defaultTextInterpreter','latex');
+clear showme                                                % Clear consistent variables!
+addpath('./functions');                                     % add function folder to search path
 %{
 This script is written by:
 
@@ -6,23 +11,8 @@ Pim de Bruin
 Kiet Foeken
 Jailing Zou
 
-And functions as the main analysis tool for the analysis of a compliant
-spider capodastro design for the course Compliant mechanisms ME46115
-(2020/2021) at the Delft University of Technology. 
-
-This file relies on the functions:
-    kinModel
-    makeTXT
-    showme
-Which can be found in the ./functions folder. 
-    
+And functions as the main analysis tool for the analysis of a comp
 %}
-
-clear all
-close all
-set(groot, 'defaultTextInterpreter','latex');
-clear showme                                                % Clear consistent variables!
-addpath('./functions');                                     % add function folder to search path
 
 %% settings
 % Which plots do you want?
@@ -43,6 +33,7 @@ Epla = 2.5E9;  % pa
 Epmma = 3E9;
 Essteel = 200E9;
 g = 5e-3;   % sheet thickness [m]
+
 
 % Joints
     % a
