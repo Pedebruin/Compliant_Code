@@ -15,7 +15,6 @@ This file relies on the functions:
     makeTXT
     showme
 Which can be found in the ./functions folder. 
-    
 %}
 
 clear all
@@ -27,7 +26,7 @@ addpath('./functions');                                     % add function folde
 %% settings
 % Which plots do you want?
 simulation = true;                  % plot the simulation? (true/false)
-equilibria = false;                 % plot the equilibrium points? (true/false)
+equilibria = true;                 % plot the equilibrium points? (true/false)
 file = false;                       % make file the equations.txt file? (true/false)
 visualisation = 'both';             % what to plot? ('PRBM' or 'Design' or 'both')
 debug = false;                      % debug mode? Allow for debug functions (true/false)
